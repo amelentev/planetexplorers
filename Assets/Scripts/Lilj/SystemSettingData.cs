@@ -32,7 +32,7 @@ public class SystemSettingData
 	
 	public string	mVersion = "0.795";
 
-    public string mLanguage = "chinese";
+    public string mLanguage = "english";
 
 	int _bLangChinese = -1;	//0: not chinese; >0: chinese; <0: not defined
 	public bool IsChinese{
