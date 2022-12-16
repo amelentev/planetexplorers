@@ -67,7 +67,7 @@ namespace CameraForge
 								Vector3 dir = Quaternion.Euler(-pitch, yaw, 0) * Vector3.back;
 								if (!Physics.SphereCast(new Ray(target, dir), NCR - 0.01f, cast_dist, layermask, QueryTriggerInteraction.Ignore))
 								{
-									Vector2 nxtyp = Vector2.SmoothDamp(new Vector2(curr_yaw, curr_pitch), new Vector2(yaw, pitch), ref vyp, 0.25f);
+									Vector2 nxtyp = Vector2.SmoothDamp(new Vector2(curr_yaw, curr_pitch), new Vector2(yaw, pitch), ref vyp, 0.25f, Mathf.Infinity, Time.deltaTime);
 									controller.executor.SetFloat("YawWanted", nxtyp.x);
 									controller.executor.SetFloat("PitchWanted", nxtyp.y);
 									return pose;
