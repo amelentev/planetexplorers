@@ -226,140 +226,144 @@ public static partial class PeInput
             return;
         }
     }
-    static List<LogicInput> s_logicInputConf = new List<LogicInput>()	// ordered by enum LogicFunction
-	{
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.PutOn],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.Down),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.Down),
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.UpHPrior, null, KeyPressType.JoyUp),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Shoot],null,KeyPressType.Down, null, KeyPressType.JoyDown),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Shoot],null,KeyPressType.UpHPrior, null, KeyPressType.JoyUp),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.Down),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.UpHPrior),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Build],null,KeyPressType.Click),	//Build
-		new LogicInput(KeyCode.Mouse0,null,KeyPressType.PressHPrior),							//Item_Drag  //10
-		new LogicInput(KeyCode.Mouse0,null,KeyPressType.Up),									//Item_Drop
-		new LogicInput(KeyCode.Mouse0,MouseExcluder,KeyPressType.Click),						//UI_SkipDialog
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact],null,KeyPressType.Click,null,KeyPressType.JoyDown, null, new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click)),//Talk
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact],null,KeyPressType.ClickNoMove, null, KeyPressType.JoyDown),	//OpenItemMenu
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Gather],null,KeyPressType.Click,null,KeyPressType.JoyDown,null, new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click)),//Gather
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Dig],null,KeyPressType.Press),				// Draw water, change from rBtn to lBtn base on yinben's request 20160523
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Take],null,KeyPressType.Click,null,KeyPressType.JoyDown,null, new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click)),//PickBody
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.PutAway],null,KeyPressType.ClickNoMove, null, KeyPressType.JoyDown),	//SheatheWeapon
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Cut],null,KeyPressType.Press,null,KeyPressType.Press,null, new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Press)),//Cut
-		new LogicInput(KeyCode.Mouse1,null,KeyPressType.LongPress),								//RotateCam use LongPress to avoid conflict with sheathWeapon //20
-		new LogicInput(KeyCode.Mouse1,null,KeyPressType.Click),									//UI_RMouseOp //not used
-		new LogicInput(KeyCode.Mouse1,null,KeyPressType.Click),									//Item_Use
-		new LogicInput(KeyCode.Mouse1,null,KeyPressType.ClickNoMove),							//Item_Equip
-		new LogicInput(KeyCode.Mouse1,MouseExcluder,KeyPressType.Click),						//Item_CancelDrag	//this should check opAnyUI
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ZoomInCamera],null,KeyPressType.Click),	//25
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ZoomOutCamera],null,KeyPressType.Click),
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.AutoRun],null,KeyPressType.Click,null,KeyPressType.JoyDown),
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click,null,KeyPressType.JoyDown),//TakeForwardVehicleOnOff,
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click,null,KeyPressType.JoyDown),//ClimbForwardLadderOnOff,
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click,null,KeyPressType.JoyDown),//InteractWithItem,			//30
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Rotate],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Rotate],null,KeyPressType.Press),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.WorldMap],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Mission],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Inventory],null,KeyPressType.Click),			//35
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.CharacterStats],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ReplicationMenu],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.SkillMenu],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.FollowersMenu],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.HandheldPC],null,KeyPressType.Click),		//40
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.CreationSystem],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ColonyMenu],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.FriendsMenu],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Shop],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],null,KeyPressType.Click),	//45
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],UIDlgExcluder,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],UIDlgExcluder,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.GameMenu],null,KeyPressType.Click),				//50
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.EscMenu_CloseAllUI],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.EscMenu_CloseAllUI],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.EscMenu_CloseAllUI],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ChangeContrlMode],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.SaveMenu],null,KeyPressType.Click),				//55
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.LoadMenu],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ScreenCapture],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar1],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar2],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar3],null,KeyPressType.Click),				//60
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar4],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar5],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar6],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar7],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar8],null,KeyPressType.Click),				//65
-		new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar9],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar10],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.PrevQuickBar],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.NextQuickBar],null,KeyPressType.Click),
-        new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.LiberatiePerspective],null,KeyPressType.Press),
+    static List<LogicInput> s_logicInputConf;
+    static void initLogicInputConf()
+    {
+        s_logicInputConf = new List<LogicInput>()	// ordered by enum LogicFunction
+        {
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.PutOn],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.Down),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.Down),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.UpHPrior, null, KeyPressType.JoyUp),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Shoot],null,KeyPressType.Down, null, KeyPressType.JoyDown),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Shoot],null,KeyPressType.UpHPrior, null, KeyPressType.JoyUp),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.Down),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Attack],null,KeyPressType.UpHPrior),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Build],null,KeyPressType.Click),	//Build
+            new LogicInput(KeyCode.Mouse0,null,KeyPressType.PressHPrior),							//Item_Drag  //10
+            new LogicInput(KeyCode.Mouse0,null,KeyPressType.Up),									//Item_Drop
+            new LogicInput(KeyCode.Mouse0,MouseExcluder,KeyPressType.Click),						//UI_SkipDialog
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact],null,KeyPressType.Click,null,KeyPressType.JoyDown, null, new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click)),//Talk
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact],null,KeyPressType.ClickNoMove, null, KeyPressType.JoyDown),	//OpenItemMenu
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Gather],null,KeyPressType.Click,null,KeyPressType.JoyDown,null, new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click)),//Gather
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Dig],null,KeyPressType.Press),				// Draw water, change from rBtn to lBtn base on yinben's request 20160523
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Take],null,KeyPressType.Click,null,KeyPressType.JoyDown,null, new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click)),//PickBody
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.PutAway],null,KeyPressType.ClickNoMove, null, KeyPressType.JoyDown),	//SheatheWeapon
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Cut],null,KeyPressType.Press,null,KeyPressType.Press,null, new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Press)),//Cut
+            new LogicInput(KeyCode.Mouse1,null,KeyPressType.LongPress),								//RotateCam use LongPress to avoid conflict with sheathWeapon //20
+            new LogicInput(KeyCode.Mouse1,null,KeyPressType.Click),									//UI_RMouseOp //not used
+            new LogicInput(KeyCode.Mouse1,null,KeyPressType.Click),									//Item_Use
+            new LogicInput(KeyCode.Mouse1,null,KeyPressType.ClickNoMove),							//Item_Equip
+            new LogicInput(KeyCode.Mouse1,MouseExcluder,KeyPressType.Click),						//Item_CancelDrag	//this should check opAnyUI
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ZoomInCamera],null,KeyPressType.Click),	//25
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ZoomOutCamera],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.AutoRun],null,KeyPressType.Click,null,KeyPressType.JoyDown),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click,null,KeyPressType.JoyDown),//TakeForwardVehicleOnOff,
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click,null,KeyPressType.JoyDown),//ClimbForwardLadderOnOff,
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Interact_Talk_Cut_Gather_Take],null,KeyPressType.Click,null,KeyPressType.JoyDown),//InteractWithItem,			//30
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Rotate],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Rotate],null,KeyPressType.Press),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.WorldMap],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Mission],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Inventory],null,KeyPressType.Click),			//35
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.CharacterStats],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ReplicationMenu],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.SkillMenu],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.FollowersMenu],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.HandheldPC],null,KeyPressType.Click),		//40
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.CreationSystem],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ColonyMenu],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.FriendsMenu],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.Shop],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],null,KeyPressType.Click),	//45
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],UIDlgExcluder,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],UIDlgExcluder,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.OpenChatWindow_Send],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.GameMenu],null,KeyPressType.Click),				//50
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.EscMenu_CloseAllUI],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.EscMenu_CloseAllUI],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.EscMenu_CloseAllUI],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ChangeContrlMode],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.SaveMenu],null,KeyPressType.Click),				//55
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.LoadMenu],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.ScreenCapture],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar1],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar2],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar3],null,KeyPressType.Click),				//60
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar4],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar5],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar6],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar7],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar8],null,KeyPressType.Click),				//65
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar9],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.QuickBar10],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.PrevQuickBar],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.NextQuickBar],null,KeyPressType.Click),
+            new LogicInput(s_settingsGeneral[(int)ESettingsGeneral.LiberatiePerspective],null,KeyPressType.Press),
 
 
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveForward],null,KeyPressType.DirU),			//70
-		new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveForward],null,KeyPressType.DoublePress, null, KeyPressType.JoyStickUpDoublePress),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveBack],null,KeyPressType.DirD),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveBack],null,KeyPressType.DoublePress, null, KeyPressType.JoyStickDownDoublePress),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveLeft],null,KeyPressType.DirL),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveLeft],null,KeyPressType.DoublePress, null, KeyPressType.JoyStickLeftDoublePress),		//75
-		new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveRight],null,KeyPressType.DirR),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveRight],null,KeyPressType.DoublePress, null, KeyPressType.JoyStickRightDoublePress),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Jump_SwimmingUp],null,KeyPressType.Down),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Jump_SwimmingUp],null,KeyPressType.Press,null,KeyPressType.JoyPress),
-		new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Jump_SwimmingUp],null,KeyPressType.Press,null,KeyPressType.JoyPress),		//80
-		new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Reload],null,KeyPressType.Click),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Walk_Run],null,KeyPressType.Click),
-		new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Sprint],null,KeyPressType.Press,null,KeyPressType.JoyPress),
-		new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Block],null,KeyPressType.Press,null,KeyPressType.JoyPress),
-        new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Jump_SwimmingUp],UIDlgExcluder,KeyPressType.Click),		//85
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveForward],null,KeyPressType.DirU),			//70
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveForward],null,KeyPressType.DoublePress, null, KeyPressType.JoyStickUpDoublePress),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveBack],null,KeyPressType.DirD),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveBack],null,KeyPressType.DoublePress, null, KeyPressType.JoyStickDownDoublePress),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveLeft],null,KeyPressType.DirL),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveLeft],null,KeyPressType.DoublePress, null, KeyPressType.JoyStickLeftDoublePress),		//75
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveRight],null,KeyPressType.DirR),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.MoveRight],null,KeyPressType.DoublePress, null, KeyPressType.JoyStickRightDoublePress),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Jump_SwimmingUp],null,KeyPressType.Down),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Jump_SwimmingUp],null,KeyPressType.Press,null,KeyPressType.JoyPress),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Jump_SwimmingUp],null,KeyPressType.Press,null,KeyPressType.JoyPress),		//80
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Reload],null,KeyPressType.Click),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Walk_Run],null,KeyPressType.Click),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Sprint],null,KeyPressType.Press,null,KeyPressType.JoyPress),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Block],null,KeyPressType.Press,null,KeyPressType.JoyPress),
+            new LogicInput(s_settingsChrCtrl[(int)ESettingsChrCtrl.Jump_SwimmingUp],UIDlgExcluder,KeyPressType.Click),		//85
 
-		new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.BuildMode],          null,KeyPressType.Click),///CD, new float[]{1}),
-		new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.FreeBuildingMode],   null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea1],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea2],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea3],null,KeyPressType.Click),			//90
-		new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea4],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea5],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea6],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.RotateOnAxis],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar1],null,KeyPressType.Click),					//95
-		new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar2],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar3],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar4],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar5],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar6],null,KeyPressType.Click),					//100
-		new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar7],null,KeyPressType.Click),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.Undo],null,KeyPressType.Press),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.Redo],null,KeyPressType.Press),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.ChangeBrush],null,KeyPressType.Press),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.DeleteSelection],null,KeyPressType.Press),				//105
-		new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.CrossSelection],null,KeyPressType.Press),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.SubtractSelection],null,KeyPressType.Press),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.AddSelection],null,KeyPressType.Press),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.Extrude],null,KeyPressType.Press),
-        new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.Squash],null,KeyPressType.Press),						//110
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.BuildMode],          null,KeyPressType.Click),///CD, new float[]{1}),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.FreeBuildingMode],   null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea1],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea2],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea3],null,KeyPressType.Click),			//90
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea4],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea5],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TweakSelectionArea6],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.RotateOnAxis],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar1],null,KeyPressType.Click),					//95
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar2],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar3],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar4],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar5],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar6],null,KeyPressType.Click),					//100
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.TopQuickBar7],null,KeyPressType.Click),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.Undo],null,KeyPressType.Press),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.Redo],null,KeyPressType.Press),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.ChangeBrush],null,KeyPressType.Press),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.DeleteSelection],null,KeyPressType.Press),				//105
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.CrossSelection],null,KeyPressType.Press),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.SubtractSelection],null,KeyPressType.Press),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.AddSelection],null,KeyPressType.Press),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.Extrude],null,KeyPressType.Press),
+            new LogicInput(s_settingsBuildMd[(int)ESettingsBuildMd.Squash],null,KeyPressType.Press),						//110
 
-		new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Fire1],null,KeyPressType.Down),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Fire1],null,KeyPressType.Up),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Fire2],null,KeyPressType.Down),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Fire2],null,KeyPressType.Up),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Brake],null,KeyPressType.Press),							//115
-		new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Brake],null,KeyPressType.Press),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.ThrottleDown],null,KeyPressType.Press),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.FireMode],null,KeyPressType.Click),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Sprint],null,KeyPressType.Press),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleLight],null,KeyPressType.Click),					//120
-		new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.MissileLock],null,KeyPressType.Click),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.MissileLaunch],null,KeyPressType.Click),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleWeaponGroup1Toggle],null,KeyPressType.Click),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleWeaponGroup2Toggle],null,KeyPressType.Click),
-        new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleWeaponGroup3Toggle],null,KeyPressType.Click),		//125
-		new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleWeaponGroup4Toggle],null,KeyPressType.Click),
-    };
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Fire1],null,KeyPressType.Down),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Fire1],null,KeyPressType.Up),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Fire2],null,KeyPressType.Down),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Fire2],null,KeyPressType.Up),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Brake],null,KeyPressType.Press),							//115
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Brake],null,KeyPressType.Press),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.ThrottleDown],null,KeyPressType.Press),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.FireMode],null,KeyPressType.Click),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.Sprint],null,KeyPressType.Press),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleLight],null,KeyPressType.Click),					//120
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.MissileLock],null,KeyPressType.Click),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.MissileLaunch],null,KeyPressType.Click),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleWeaponGroup1Toggle],null,KeyPressType.Click),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleWeaponGroup2Toggle],null,KeyPressType.Click),
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleWeaponGroup3Toggle],null,KeyPressType.Click),		//125
+            new LogicInput(s_settingsVehicle[(int)ESettingsVehicle.VehicleWeaponGroup4Toggle],null,KeyPressType.Click),
+        };
+    }
     static void ResetLogicInput()
     {
         s_inputExcluders.Clear();
@@ -372,6 +376,7 @@ public static partial class PeInput
     }
     static PeInput()
     {
+        initLogicInputConf();
         Input.ResetInputAxes();
         ResetSetting();
         CameraForge.InputModule.SetAxis("Mouse ScrollWheel", GetMouseWheel);
