@@ -1,4 +1,7 @@
-﻿Shader "SpecialItem/MariaCloud" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "SpecialItem/MariaCloud" {
 	Properties 
 	{
 		_NoiseTexture("Noise Texture", 2D) = "white" {}
@@ -130,11 +133,11 @@
 			{
 				v2f o;
 	 
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.texCoord = v.texcoord;
 				o.vertPos.xy= o.texCoord;
 				o.vertPos.z = 0;
-				o.normal = normalize(mul(_Object2World, float4(v.normal.xyz, 0)).xyz);
+				o.normal = normalize(mul(unity_ObjectToWorld, float4(v.normal.xyz, 0)).xyz);
 				o.dist = length(v.vertex);				
 				return o;
 			}

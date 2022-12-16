@@ -86,7 +86,7 @@ public class SceneMan : MonoBehaviour, Pathea.ISerializable
 	void Awake()
 	{
 		self = this;
-		Profiler.maxNumberOfSamplesPerFrame = -1;
+		UnityEngine.Profiling.Profiler.maxNumberOfSamplesPerFrame = -1;
 		Pathea.ArchiveMgr.Instance.Register(ArchiveKey, this, true);
 	}
 

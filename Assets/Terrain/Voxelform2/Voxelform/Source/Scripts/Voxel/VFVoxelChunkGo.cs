@@ -135,7 +135,7 @@ public class VFVoxelChunkGo : MonoBehaviour,IRecyclable
 	}
 	public void OnColliderReady()
 	{
-		Profiler.BeginSample ("OnColReady");
+		UnityEngine.Profiling.Profiler.BeginSample ("OnColReady");
         bool isNewCollider = (OriginalChunkGo == null);
   
 		if(OriginalChunkGo != null)
@@ -148,7 +148,7 @@ public class VFVoxelChunkGo : MonoBehaviour,IRecyclable
 				try{RebuildChunkColliderEvent(this);}
 				catch{Debug.LogError("Error in RebuildChunkColliderEvent:"+transform.position);}
 			}
-			Profiler.EndSample ();
+			UnityEngine.Profiling.Profiler.EndSample ();
 			return;
 		}
 		else if(Data != null)
@@ -161,7 +161,7 @@ public class VFVoxelChunkGo : MonoBehaviour,IRecyclable
 			try{CreateChunkColliderEvent(this);	}
 			catch{Debug.LogError("Error in CreateChunkColliderEvent:"+transform.position);}
         }
-		Profiler.EndSample ();
+		UnityEngine.Profiling.Profiler.EndSample ();
 	}
 	public void OnColliderDestroy()
 	{

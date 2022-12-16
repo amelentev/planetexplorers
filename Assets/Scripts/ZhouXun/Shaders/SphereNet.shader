@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "zhouxun/SphereNet"
 {
 	Properties
@@ -49,7 +51,7 @@ Shader "zhouxun/SphereNet"
 			{
 				v2f o;
 				o.vertPos.rgb = v.vertex.xyz;	
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				return o;
 			} 
 			

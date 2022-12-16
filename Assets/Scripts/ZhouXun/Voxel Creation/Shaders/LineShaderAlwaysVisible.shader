@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Voxel Creation/LineShader Always Visible"
 {
 	Properties
@@ -39,7 +41,7 @@ Shader "Voxel Creation/LineShader Always Visible"
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul( UNITY_MATRIX_MVP, v.vertex);				
+				o.pos = UnityObjectToClipPos( v.vertex);				
 				o.texc = v.texcoord;			
 				o.color = v.color;
 				return o;
@@ -84,7 +86,7 @@ Shader "Voxel Creation/LineShader Always Visible"
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul( UNITY_MATRIX_MVP, v.vertex);				
+				o.pos = UnityObjectToClipPos( v.vertex);				
 				o.texc = v.texcoord;			
 				o.color = v.color;
 				return o;

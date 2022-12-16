@@ -94,7 +94,7 @@ namespace Pathea
 
             foreach (FileInfo fileInfoSrc in fileInfosSrc)
             {
-                Profiler.BeginSample("copy:" + fileInfoSrc.FullName);
+                UnityEngine.Profiling.Profiler.BeginSample("copy:" + fileInfoSrc.FullName);
 
                 if (needCopy == null || needCopy(fileInfoSrc))
                 {
@@ -106,7 +106,7 @@ namespace Pathea
                     }
                 }
 
-                Profiler.EndSample();
+                UnityEngine.Profiling.Profiler.EndSample();
             }
 
             foreach (DirectoryInfo subDirSrc in subDirsSrc)

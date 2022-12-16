@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Unlit/Color Multiply"
 {
 	Properties
@@ -37,7 +39,7 @@ Shader "Unlit/Color Multiply"
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul( UNITY_MATRIX_MVP, v.vertex);				
+				o.pos = UnityObjectToClipPos( v.vertex);				
 				o.texc = v.texcoord;	
 				return o;
 			}
@@ -78,7 +80,7 @@ Shader "Unlit/Color Multiply"
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul( UNITY_MATRIX_MVP, v.vertex);				
+				o.pos = UnityObjectToClipPos( v.vertex);				
 				o.texc = v.texcoord;	
 				return o;
 			}

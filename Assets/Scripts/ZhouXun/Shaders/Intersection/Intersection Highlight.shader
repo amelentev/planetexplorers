@@ -1,4 +1,6 @@
-﻿Shader "zhouxun/Intersection Highlight"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "zhouxun/Intersection Highlight"
 {
 	Properties 
 	{
@@ -48,7 +50,7 @@
 			v2f vert(appdata_myvert v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.screenPos = ComputeScreenPos(o.pos);
 				return o;
 			}

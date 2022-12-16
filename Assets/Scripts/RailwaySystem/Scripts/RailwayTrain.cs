@@ -25,7 +25,7 @@ public class RailwayTrain : MousePickableChildCollider
 
     void Awake()
     {
-        Transform points = transform.FindChild("monorail_cart/Master_Point");
+        Transform points = transform.Find("monorail_cart/Master_Point");
         m_SeatList = new List<RailwaySeat>(points.childCount);
         foreach (Transform tran in points)
         {

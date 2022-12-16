@@ -64,7 +64,7 @@ public class PointGraphTool : MonoBehaviour
 
     Transform GetCaveTransform(string name)
     {
-        Transform tmp = transform.FindChild(name);
+        Transform tmp = transform.Find(name);
 
         if (tmp == null)
         {

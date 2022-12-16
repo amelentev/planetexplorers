@@ -449,7 +449,7 @@ namespace Pathea
                 
 				bool bOldIdxFileLoaded = false;
 				ArchiveIndexFile oldIndexFile = null;
-                Profiler.BeginSample("Archive");
+                UnityEngine.Profiling.Profiler.BeginSample("Archive");
                 serializeObjList.Foreach((serializeObj) =>
                 {
                     bool bWrite = true;
@@ -471,7 +471,7 @@ namespace Pathea
                         CopyIndex(mIndexFile, oldIndexFile, serializeObj);
                     }
                 });
-                Profiler.EndSample();
+                UnityEngine.Profiling.Profiler.EndSample();
 
                 mIndexFile.Write(dir);
             }
@@ -493,7 +493,7 @@ namespace Pathea
 
             serializeObj.Foreach((obj) =>
             {
-                Profiler.BeginSample("only copy index:" + obj.key);
+                UnityEngine.Profiling.Profiler.BeginSample("only copy index:" + obj.key);
 
                 ArchiveIndex index = oldIndexFile.GetArchiveIndex(obj.key);
                 if (index != null)
@@ -501,7 +501,7 @@ namespace Pathea
                     indexFile.Add(obj.key, index);
                 }
 
-                Profiler.EndSample();
+                UnityEngine.Profiling.Profiler.EndSample();
             });
         }
 
@@ -522,13 +522,13 @@ namespace Pathea
                         {
                             if (!obj.yird)
                             {
-								Profiler.BeginSample("save:" + obj.key);
+								UnityEngine.Profiling.Profiler.BeginSample("save:" + obj.key);
                                 long beginPos = fileStream.Position;
                                 obj.serialize.Serialize(new PeRecordWriter(obj.key, writer));
                                 long endPos = fileStream.Position;
 
                                 indexFile.Add(obj.key, new ArchiveIndex(serializeObj.recordName, obj.yird, beginPos, endPos));
-								Profiler.EndSample();
+								UnityEngine.Profiling.Profiler.EndSample();
                             }
                         });
 
@@ -556,7 +556,7 @@ namespace Pathea
 
                         serializeObj.Foreach((obj) =>
                         {
-                            Profiler.BeginSample("save:" + obj.key);
+                            UnityEngine.Profiling.Profiler.BeginSample("save:" + obj.key);
 
                             if (obj.yird)
                             {
@@ -569,7 +569,7 @@ namespace Pathea
                                 indexFile.Add(obj.key, new ArchiveIndex(serializeObj.recordName, obj.yird, beginPos, endPos));
                             }
 
-                            Profiler.EndSample();
+                            UnityEngine.Profiling.Profiler.EndSample();
                         });
 
                         indexFile.header.EndWriteCheckSum(yirdWriter);

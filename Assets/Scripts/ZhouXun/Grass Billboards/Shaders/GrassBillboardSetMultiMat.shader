@@ -1,4 +1,6 @@
-﻿Shader "zhouxun/Grass/Billboard Set (MultiMat)" 
+﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
+Shader "zhouxun/Grass/Billboard Set (MultiMat)" 
 {
 	Properties 
 	{
@@ -129,7 +131,7 @@
 			half3 vtxForAni = (v.normal).xzz * 1.0; 		
 			half3 nrml;
 			half3 offsets;
-			half3 objectSpaceVert = mul(_World2Object, half4( v.normal, 1)).xyz;
+			half3 objectSpaceVert = mul(unity_WorldToObject, half4( v.normal, 1)).xyz;
 			Gerstner (
 				offsets, nrml, v.normal.xyz, vtxForAni, 					// offsets, nrml will be written
 				_GAmplitude,					 							// amplitude
@@ -166,7 +168,7 @@
 			float4 vofs = wave + sign(wave) * max ( abs(wave) * 0.07 - 0.015, 0) * f * 0.7;
 			v.vertex = fix_vert + vofs;
 			
-			v.vertex = mul(_World2Object, v.vertex); // disable obj2world matrix (used for disable camera clipping)
+			v.vertex = mul(unity_WorldToObject, v.vertex); // disable obj2world matrix (used for disable camera clipping)
 
 			
 			// fetch vertex normal

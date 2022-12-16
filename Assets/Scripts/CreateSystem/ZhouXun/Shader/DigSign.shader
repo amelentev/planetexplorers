@@ -1,3 +1,6 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "zhouxun/DigSign"
 {
 	Properties
@@ -63,8 +66,8 @@ Shader "zhouxun/DigSign"
 			v2f vert (appdata_v v)
 			{
 				v2f o; 
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.wPos = mul(_Object2World, v.vertex).xyz;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				o.wPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 				return o;
 			}
 			

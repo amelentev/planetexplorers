@@ -43,7 +43,7 @@ public class PlayerBuildGirdItem : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		Transform tran = transform.FindChild("Background");
+		Transform tran = transform.Find("Background");
 		if(null != tran)
 		{
 			UIWidget uiw = tran.GetComponent<UIWidget>();

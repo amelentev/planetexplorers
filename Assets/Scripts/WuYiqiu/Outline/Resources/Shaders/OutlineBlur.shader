@@ -1,4 +1,6 @@
-﻿Shader "wuyiqiu/Outline/Blur" 
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "wuyiqiu/Outline/Blur" 
 {
 	Properties
 	{
@@ -37,7 +39,7 @@
 			v2f vert (appdata_img v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				
 				half2 offs = _MainTex_TexelSize.xy * _OffsetScale;
 				

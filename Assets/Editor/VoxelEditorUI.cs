@@ -309,7 +309,7 @@ public class VoxelEditorUI : Editor {
 		}
 		if(ve.terBrushProjector == null)
 		{
-			Transform prjTransform = ve.gameObject.transform.parent.FindChild("TmpPrj");
+			Transform prjTransform = ve.gameObject.transform.parent.Find("TmpPrj");
 			if(prjTransform == null)
 			{
 				GameObject go = new GameObject("TmpPrj");

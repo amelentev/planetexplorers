@@ -1,4 +1,6 @@
-﻿Shader "SpecialItem/Stealth" 
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "SpecialItem/Stealth" 
 {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
@@ -53,7 +55,7 @@
 			o.uv_MainTex = v.texcoord.xy;
 		    o.world_pos = v.vertex;
 		    o.world_normal = normalize(v.normal);
-		    o.screenPos = mul(UNITY_MATRIX_MVP, v.vertex);		    
+		    o.screenPos = UnityObjectToClipPos(v.vertex);		    
 		}
 		void surf (Input IN, inout SurfaceOutput o) 
 		{

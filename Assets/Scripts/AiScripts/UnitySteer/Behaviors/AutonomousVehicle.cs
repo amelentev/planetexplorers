@@ -26,7 +26,7 @@ public class AutonomousVehicle: Vehicle
 	{
 		var force = Vector3.zero;
 
-		Profiler.BeginSample("Calculating forces");
+		UnityEngine.Profiling.Profiler.BeginSample("Calculating forces");
 
 		foreach (var steering in Steerings)
 		{
@@ -34,7 +34,7 @@ public class AutonomousVehicle: Vehicle
 				force  += steering.WeighedForce;
 		}
 
-		Profiler.EndSample();
+		UnityEngine.Profiling.Profiler.EndSample();
 
 		ApplySteeringForce(force, Time.fixedDeltaTime);
 	}
@@ -97,7 +97,7 @@ public class AutonomousVehicle: Vehicle
 
 		// Euler integrate (per frame) velocity into position
 		// TODO: Change for a motor
-		Profiler.BeginSample("Applying displacement");
+		UnityEngine.Profiling.Profiler.BeginSample("Applying displacement");
 		var delta = (newVelocity * elapsedTime);
 		if (_characterController != null) 
 		{
@@ -115,7 +115,7 @@ public class AutonomousVehicle: Vehicle
 			 */
 			_rigidbody.MovePosition (_rigidbody.position + delta);
 		}
-		Profiler.EndSample();
+		UnityEngine.Profiling.Profiler.EndSample();
 		
 
 		// regenerate local space (by default: align vehicle's forward axis with

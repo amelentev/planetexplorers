@@ -1,4 +1,7 @@
-﻿Shader "Zhouxun/PlanetHalo Sun"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Zhouxun/PlanetHalo Sun"
 {
 	Properties 
 	{
@@ -51,9 +54,9 @@
 			{
 				v2f o;
 	 
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.wpos = mul(_Object2World, v.vertex).xyz;
-				o.wnorm = mul(_Object2World, float4(normalize(v.vertex.xyz),0)).xyz;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				o.wpos = mul(unity_ObjectToWorld, v.vertex).xyz;
+				o.wnorm = mul(unity_ObjectToWorld, float4(normalize(v.vertex.xyz),0)).xyz;
 				return o;
 			}
 			

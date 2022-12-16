@@ -1,4 +1,7 @@
-﻿Shader "NovaEnv/Lenswave"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "NovaEnv/Lenswave"
 {
 	Properties
 	{
@@ -90,8 +93,8 @@
 			v2f vert (appdata v)
 			{
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.wpos = mul(_Object2World, v.vertex).xyz;
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				o.wpos = mul(unity_ObjectToWorld, v.vertex).xyz;
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				return o;
 			}

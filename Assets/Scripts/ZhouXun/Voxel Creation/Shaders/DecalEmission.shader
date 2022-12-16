@@ -1,4 +1,7 @@
-﻿Shader "Voxel Creation/Decal Emission"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Voxel Creation/Decal Emission"
 {
 	Properties
 	{
@@ -51,8 +54,8 @@
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.wPos.xyz = mul(_Object2World, v.vertex).xyz;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				o.wPos.xyz = mul(unity_ObjectToWorld, v.vertex).xyz;
 				o.color = v.color;
 				return o;
 			}

@@ -1,3 +1,6 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: commented out 'float4 unity_ShadowFadeCenterAndType', a built-in variable
 
 Shader "VoxelMultiMaterial_Def" {
@@ -75,8 +78,8 @@ Properties {
 			  vert (v, customInputData);
 			  o.custompack0.xyzw = customInputData.weights;
 			  o.custompack1.xyzw = customInputData.blendMask;
-			  o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
-			  float3 worldPos = mul(_Object2World, v.vertex).xyz;
+			  o.pos = UnityObjectToClipPos (v.vertex);
+			  float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 			  fixed3 worldNormal = UnityObjectToWorldNormal(v.normal);
 			  o.worldPos = worldPos;
 			  o.worldNormal = worldNormal;
@@ -175,8 +178,8 @@ Properties {
 			  vert (v, customInputData);
 			  o.custompack0.xyzw = customInputData.weights;
 			  o.custompack1.xyzw = customInputData.blendMask;
-			  o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
-			  float3 worldPos = mul(_Object2World, v.vertex).xyz;
+			  o.pos = UnityObjectToClipPos (v.vertex);
+			  float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 			  fixed3 worldNormal = UnityObjectToWorldNormal(v.normal);
 			  o.worldPos = worldPos;
 			  o.worldNormal = worldNormal;
@@ -261,8 +264,8 @@ Properties {
 			  vert (v, customInputData);
 			  o.custompack0.xyzw = customInputData.weights;
 			  o.custompack1.xyzw = customInputData.blendMask;
-			  o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
-			  o.worldPos = mul(_Object2World, v.vertex).xyz;
+			  o.pos = UnityObjectToClipPos (v.vertex);
+			  o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 			  o.worldNormal = UnityObjectToWorldNormal(v.normal);
 			  return o;
 			}
@@ -345,8 +348,8 @@ Properties {
 			  vert (v, customInputData);
 			  o.custompack0.xyzw = customInputData.weights;
 			  o.custompack1.xyzw = customInputData.blendMask;
-			  o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
-			  o.worldPos = mul(_Object2World, v.vertex).xyz;
+			  o.pos = UnityObjectToClipPos (v.vertex);
+			  o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 			  o.worldNormal = UnityObjectToWorldNormal(v.normal);
 			  o.screen = ComputeScreenPos (o.pos);
 			  o.lmap.zw = 0;

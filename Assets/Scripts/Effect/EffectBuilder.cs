@@ -148,9 +148,9 @@ namespace Pathea.Effect
 
                     if (m_Data != null)
                     {
-						Profiler.BeginSample("GetMono");
+						UnityEngine.Profiling.Profiler.BeginSample("GetMono");
                         MonoBehaviour[] behaviours = effect.GetComponentsInChildren<MonoBehaviour>();
-						Profiler.EndSample();
+						UnityEngine.Profiling.Profiler.EndSample();
 
                         foreach (MonoBehaviour behaviour in behaviours)
                         {

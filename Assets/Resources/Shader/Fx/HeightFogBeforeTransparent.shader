@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 
 Shader "AngryBots/FX/HeightFogBeforeTransparent" {
 	
@@ -46,7 +48,7 @@ SubShader {
 			v2f o;
 			int index = (int)v.texcoord.y;
 
-			o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+			o.pos = UnityObjectToClipPos(v.vertex);
 			o.uv = ComputeScreenPos(o.pos);			
 			
 			o.interpolatedRay = _FrustumCornersWS[index];

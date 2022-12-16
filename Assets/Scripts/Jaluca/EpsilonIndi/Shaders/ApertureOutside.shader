@@ -1,4 +1,6 @@
-﻿Shader "SpecialItem/ApertureOutside"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "SpecialItem/ApertureOutside"
 {
 	Properties 
 	{				
@@ -64,7 +66,7 @@
 			{
 				v2f o;
 	 
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.texCoord = v.texcoord;	
 				return o;
 			}

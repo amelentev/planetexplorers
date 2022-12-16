@@ -18,7 +18,7 @@ public class PePhotoController : ViewController
 		if (m_Target == null)
 			return null;
 
-		Transform tran = m_Target.FindChild("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
+		Transform tran = m_Target.Find("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
 		Transform old_parent = transform.parent;
 		if (tran != null)
 		{

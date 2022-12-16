@@ -1,4 +1,8 @@
-﻿Shader "Demo/PaintProjector" 
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_Projector' with 'unity_Projector'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Demo/PaintProjector" 
 {
 		Properties 
 	{
@@ -45,7 +49,7 @@
 			float4		_Direction;
 			float 		_Depth;
 			
-			float4x4 _Projector;
+			float4x4 unity_Projector;
 
 			struct appdata_v
 			{
@@ -63,9 +67,9 @@
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.v_pos.xyz = mul(_Object2World, v.vertex);	
-				o.uv = mul (_Projector, v.vertex); 
+				o.pos = UnityObjectToClipPos(v.vertex);
+				o.v_pos.xyz = mul(unity_ObjectToWorld, v.vertex);	
+				o.uv = mul (unity_Projector, v.vertex); 
 				return o;
 			}
 			

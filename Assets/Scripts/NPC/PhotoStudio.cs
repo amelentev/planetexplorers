@@ -145,7 +145,7 @@ public class PhotoStudio : MonoBehaviour
 
         mHeroViewModle.SetActive(true);
 
-        Transform tran = mCopyModel.transform.FindChild("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
+        Transform tran = mCopyModel.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
         if (tran != null)
         {
 //			mPhotoCam.transform.parent = tran;
@@ -217,7 +217,7 @@ public class PhotoStudio : MonoBehaviour
             }
         }
 
-        Transform tran = mCopyModel.transform.FindChild("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
+        Transform tran = mCopyModel.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
         if (tran != null)
         {
             mPhotoCam.transform.parent = tran;

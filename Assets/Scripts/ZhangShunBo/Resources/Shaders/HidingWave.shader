@@ -1,4 +1,7 @@
-﻿Shader "Custom/HidingWave" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/HidingWave" {
 	Properties 
 	{
 		_SrcMap ("Src Map", 2D) = "white" {}
@@ -77,9 +80,9 @@
 			v2f vert(appdata_water v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.projpos = o.pos;
-				o.worldPos = mul(_Object2World,(v.vertex)).xyz;
+				o.worldPos = mul(unity_ObjectToWorld,(v.vertex)).xyz;
 				UNITY_TRANSFER_FOG(o,o.pos);
 				
 				o.uv = TRANSFORM_TEX(v.texcoord,_SrcMap);

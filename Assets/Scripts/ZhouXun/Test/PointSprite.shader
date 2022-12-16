@@ -1,4 +1,6 @@
-﻿Shader "Custom/PointShader" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/PointShader" {
 	Properties
 	{
 		_MainTexture("Main Texture", 2D) = "white" {}
@@ -33,7 +35,7 @@
  			void vert(VertInput input, out VertOutput output)
  			{
  				// output.pos = input.texCoord;//mul(_Object2World, input.center);
- 				output.position = mul(UNITY_MATRIX_MVP, input.center);
+ 				output.position = UnityObjectToClipPos(input.center);
 				output.color = input.color;
                 output.psize = 2;
  			}

@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 /* This shader requires Unity Pro - if you are receiving an error
 that "No subshaders can run on this card", or if this shader is pink and
 doesn't present slots for the textures and properties, you will need to use a different shader
@@ -64,7 +66,7 @@ Shader "River Shader Depth"
 		v2f vert(appdata_full v)
 		{ 
 			v2f o;
-			o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+			o.pos = UnityObjectToClipPos(v.vertex);
 #if UNITY_UV_STARTS_AT_TOP
 			float scale = -1.0;
 #else

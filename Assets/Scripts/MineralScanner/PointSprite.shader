@@ -1,4 +1,7 @@
-﻿Shader "Custom/PointSprite" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/PointSprite" {
 	Properties
 	{
 		_PaletteTex ("Palette Img", 2D) = "white" {}
@@ -30,8 +33,8 @@
 			v2f vert (appdata_full v)
 			{
 				v2f o;
-				o.wPos = mul (_Object2World, v.vertex).xyz;
-				o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+				o.wPos = mul (unity_ObjectToWorld, v.vertex).xyz;
+				o.pos = UnityObjectToClipPos (v.vertex);
 				o.size = _PointSize;
 				o.texcoord = v.color.xy;	// color has been mapped to 0-1
 				return o;

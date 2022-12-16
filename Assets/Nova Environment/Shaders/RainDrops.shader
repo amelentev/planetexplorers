@@ -1,4 +1,6 @@
-﻿Shader "NovaEnv/RainDrops"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "NovaEnv/RainDrops"
 {
 	Properties
 	{
@@ -55,7 +57,7 @@
 			{
 				v2f o;
 				o.texc.xyz = v.texcoord.xyz;	
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.projpos = o.pos;
 				o.color = v.color;
 				return o;
@@ -131,7 +133,7 @@
 			{
 				v2f o;
 				o.texc.xyz = v.texcoord.xyz;	
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.color = v.color;
 				return o;
 			}

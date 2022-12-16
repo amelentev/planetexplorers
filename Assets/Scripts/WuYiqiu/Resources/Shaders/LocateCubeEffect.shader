@@ -1,4 +1,7 @@
-﻿Shader "WuYiqiu/LocateCubeEffect" 
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "WuYiqiu/LocateCubeEffect" 
 {
 	Properties
 	{
@@ -57,8 +60,8 @@
 			{
 				v2f o;
 				o.vertPos.xyz = v.vertex.xyz;	
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.worldPos = mul(_Object2World, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
+				o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 				//_object2world
 				o.texPos = v.texcoord;
 				return o;

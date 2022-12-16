@@ -202,7 +202,7 @@ namespace Pathea
 				}
             }
 
-            Profiler.BeginSample("write archive:"+eSave);
+            UnityEngine.Profiling.Profiler.BeginSample("write archive:"+eSave);
 
             mCurArchive.WriteToFile(mArchiveObjList, yirdName, header, (recordObj) =>
             {
@@ -220,7 +220,7 @@ namespace Pathea
                 }
             });
 
-            Profiler.EndSample();
+            UnityEngine.Profiling.Profiler.EndSample();
 
             //Profiler.BeginSample("sync swap :");
 

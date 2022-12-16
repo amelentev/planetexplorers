@@ -1,4 +1,6 @@
-﻿Shader "SpecialItem/Holographic" {
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "SpecialItem/Holographic" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_Lightn ("Lightness", 2D) = "white" {}
@@ -50,7 +52,7 @@
 			{
 				o.uv_MainTex = v.texcoord.xy;
 		    	o.world_pos = v.vertex;
-		    	o.screenPos = mul(UNITY_MATRIX_MVP, v.vertex);
+		    	o.screenPos = UnityObjectToClipPos(v.vertex);
 			}
 			float GetLED ( sampler2D depthtex, float4 screen_pos )
 			{

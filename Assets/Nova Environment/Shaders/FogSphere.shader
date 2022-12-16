@@ -1,4 +1,6 @@
-﻿Shader "NovaEnv/FogSphere"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "NovaEnv/FogSphere"
 {
 	Properties
 	{
@@ -44,7 +46,7 @@
 			{
 				v2f o;
 				o.vertPos.xyz = v.vertex.xyz;	
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				return o;
 			}
 

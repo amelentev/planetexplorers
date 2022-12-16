@@ -128,31 +128,31 @@ public class TestMission : MonoBehaviour {
 		GUILayout.BeginArea(new Rect(630, 0, 50, 40));
 		if (GUILayout.Button("herb1") && gather)
 		{
-			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.FindChild("holoherbs").FindChild("offset1").GetComponent<HoloherbAppearance>());
+			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.Find("holoherbs").Find("offset1").GetComponent<HoloherbAppearance>());
 		}
 		GUILayout.EndArea();
 		GUILayout.BeginArea(new Rect(685, 0, 50, 40));
 		if (GUILayout.Button("herb2") && gather)
 		{
-			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.FindChild("holoherbs").FindChild("offset2").GetComponent<HoloherbAppearance>());
+			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.Find("holoherbs").Find("offset2").GetComponent<HoloherbAppearance>());
 		}
 		GUILayout.EndArea();
 		GUILayout.BeginArea(new Rect(740, 0, 50, 40));
 		if (GUILayout.Button("herb3") && gather)
 		{
-			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.FindChild("holoherbs").FindChild("offset3").GetComponent<HoloherbAppearance>());
+			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.Find("holoherbs").Find("offset3").GetComponent<HoloherbAppearance>());
 		}
 		GUILayout.EndArea();
 		GUILayout.BeginArea(new Rect(795, 0, 50, 40));
 		if (GUILayout.Button("herb4") && gather)
 		{
-			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.FindChild("holoherbs").FindChild("offset4").GetComponent<HoloherbAppearance>());
+			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.Find("holoherbs").Find("offset4").GetComponent<HoloherbAppearance>());
 		}
 		GUILayout.EndArea();
 		GUILayout.BeginArea(new Rect(850, 0, 50, 40));
 		if (GUILayout.Button("herb5") && gather)
 		{
-			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.FindChild("holoherbs").FindChild("offset5").GetComponent<HoloherbAppearance>());
+			HoloherbTask.Instance.SubHerb(HoloherbTask.Instance.transform.Find("holoherbs").Find("offset5").GetComponent<HoloherbAppearance>());
 		}
 		GUILayout.EndArea();
 	}

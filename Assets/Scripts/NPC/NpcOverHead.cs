@@ -181,19 +181,19 @@ public class NpcOverHead : MonoBehaviour
     public float heightAdjust = 0.4f;
     public float scaleAdjust = 8f;
     public Pathea.PeEntity EntityOver { get { return m_Entity; } set { m_Entity = value; } }
-    //lz-2016.10.13 »·ÈÆÑªÌõ,´¦ÀíÌØÊâ¹ÖÎï(²»»áºÍÄ£ÐÍ´©²å)
+    //lz-2016.10.13 ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½Í´ï¿½ï¿½ï¿½)
     [SerializeField]
     private bool m_CircleHpBar =false;
-    //lz-2016.10.13 µÍÑªÌõ,´¦ÀíÌØÊâ¹ÖÎï£¨µÍÓÐ¿ÉÄÜ»á£©
+    //lz-2016.10.13 ï¿½ï¿½Ñªï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï£¨ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½Ü»á£©
     [SerializeField]
     private bool m_LowHpBar = false;
     [SerializeField]
     private float m_LowHpBarFactor = 0.2f;
 
 
-    //lz-2016.10.13 ÐèÒª»·ÈÆÑªÌõµÄ¹ÖÎïID
+    //lz-2016.10.13 ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ID
     private List<int> m_NeedCircleHpBarMonsterIDs = new List<int> { 95 };
-    //lz-2016.10.13 ÐèÒªµÍÑªÌõµÄ¹ÖÎïID
+    //lz-2016.10.13 ï¿½ï¿½Òªï¿½ï¿½Ñªï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ID
     private List<int> m_NeedLowHpBarMonsterIDs = new List<int> { 96 };
 
 
@@ -221,7 +221,7 @@ public class NpcOverHead : MonoBehaviour
     #region mono methods
     void Awake()
     {
-        //lz-2016.06.07 Ì«ÀË·ÑÁË£¬·´ÕýÊÇÔ¤ÖÆÎïÌå£¬ÎªÊ²Ã´²»ÔÚÔ¤ÖÆÎïÌåÉÏ°ÑÒªÓÃµ½µÄ×é¼þ¹ØÁªºÃ£¬¶øÒªÊµÀýÒ»¸öNpcOverHead¶¼Í¨¹ýGetComponentºÍFindChild¸ø¶ÔÏó¸³Öµ£¿
+        //lz-2016.06.07 Ì«ï¿½Ë·ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½å£¬ÎªÊ²Ã´ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½Òªï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ÒªÊµï¿½ï¿½Ò»ï¿½ï¿½NpcOverHeadï¿½ï¿½Í¨ï¿½ï¿½GetComponentï¿½ï¿½FindChildï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½
         //InitOverHead();
     }
 
@@ -236,7 +236,7 @@ public class NpcOverHead : MonoBehaviour
 
     void Update()
     {
-        //lz-2016.06.14 npcÊÇÈÎÎñ¸úËæ×Å»òÕßÆÍ´Ó¾Í²»ÏÔÊ¾ÈÎÎñÍ¼±ê
+        //lz-2016.06.14 npcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½ï¿½ï¿½ï¿½Í´Ó¾Í²ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½
         if (null != m_Entity && null != m_Entity.NpcCmpt)
         {
             if (m_entity.NpcCmpt.IsFollower)
@@ -249,7 +249,7 @@ public class NpcOverHead : MonoBehaviour
             }
         }
 
-        //lz-2016.09.26 ¼ì²é¶àÈËÄ£Ê½ÊÇ·ñÒþ²ØÍæ¼Ò¸öÈËµÄÐÅÏ¢
+        //lz-2016.09.26 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¸ï¿½ï¿½Ëµï¿½ï¿½ï¿½Ï¢
         CheckMainPlayerInfo();
     }
 
@@ -330,9 +330,9 @@ public class NpcOverHead : MonoBehaviour
     public void SetTheEntity(Pathea.PeEntity entity)
     {
         m_Entity = entity;
-        //lz-2016.10.13 ÉèÖÃÊÇ·ñÐèÒª»·ÈÆÑªÌõ
+        //lz-2016.10.13 ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½
         m_CircleHpBar= m_NeedCircleHpBarMonsterIDs.Contains(m_Entity.ProtoID);
-        //lz-2016.10.13 ÉèÖÃÊÇ·ñÐèÒªµÍÑªÌõ
+        //lz-2016.10.13 ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½Ñªï¿½ï¿½
         m_LowHpBar = m_NeedLowHpBarMonsterIDs.Contains(m_Entity.ProtoID);
     }
 
@@ -447,7 +447,7 @@ public class NpcOverHead : MonoBehaviour
             case "shop_buji":
             case "shop_jiaju":
             case "shop_zahuo":
-                //lz-2016.09.05 ÈÃÍ¼±ê½ô°¤×ÅÃû×Ö×ó±ß£¬±ÜÃâÀëµÃÌ«Ô¶
+                //lz-2016.09.05 ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì«Ô¶
                 mIcon.spriteName = Icon;
                 mIcon.MakePixelPerfect();
                 Vector3 labelTrans = mLable.transform.localPosition;
@@ -559,7 +559,7 @@ public class NpcOverHead : MonoBehaviour
         {
             if (m_Entity.IsMainPlayer)
             {
-                //lz-2016.10.08 µÚÒ»ÈË³ÆµÄÊ±ºòÒþ²ØÍæ¼ÒÍ·¶¥µÄÐÅÏ¢¡¾´íÎó #3739¡¿
+                //lz-2016.10.08 ï¿½ï¿½Ò»ï¿½Ë³Æµï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ #3739ï¿½ï¿½
                 if (SystemSettingData.Instance.FirstPersonCtrl)
                 {
                     mHideMainPlayerInfo = true;
@@ -597,7 +597,7 @@ public class NpcOverHead : MonoBehaviour
 
     void InitOverHead()
     {
-        Transform trans = transform.FindChild("MissionMark");
+        Transform trans = transform.Find("MissionMark");
         if (null == trans)
         {
             Debug.LogWarning("no text mesh to show mission mark");
@@ -608,7 +608,7 @@ public class NpcOverHead : MonoBehaviour
 
 
         //***********************************************
-        trans = transform.FindChild("Revival");
+        trans = transform.Find("Revival");
         if (null == trans)
         {
             Debug.LogWarning("no Revival found");
@@ -619,7 +619,7 @@ public class NpcOverHead : MonoBehaviour
         SetRevivalMark(false, 0f);
          
 
-        trans = transform.FindChild("Namlb");
+        trans = transform.Find("Namlb");
         if (null == trans)
         {
             Debug.LogWarning("no text show Namlb");
@@ -627,7 +627,7 @@ public class NpcOverHead : MonoBehaviour
         }
         NameLb = trans;
 
-        trans = trans.transform.FindChild("Label");
+        trans = trans.transform.Find("Label");
         if (null == trans)
         {
             Debug.LogWarning("no text show Namlb");
@@ -635,7 +635,7 @@ public class NpcOverHead : MonoBehaviour
         }
         mLable = trans.GetComponent<UILabel>() as UILabel;
 
-        trans = NameLb.transform.FindChild("Icon");
+        trans = NameLb.transform.Find("Icon");
         if (null == trans)
         {
             Debug.LogWarning("no text show Icon");
@@ -643,30 +643,30 @@ public class NpcOverHead : MonoBehaviour
         }
         mIcon = trans.GetComponent<UISprite>() as UISprite;
 
-        trans = transform.FindChild("Player");
+        trans = transform.Find("Player");
         PlayerTrans = trans;
         if (PlayerTrans != null)
-            trans = PlayerTrans.FindChild("BloodItemPlayer");
+            trans = PlayerTrans.Find("BloodItemPlayer");
         if (trans != null)
         {
             mBloodPlayer = trans.GetComponent<UISlider>() as UISlider;
             mPlayerBloodcmpt = trans.GetComponent<Bloodcmpt>();
         }
 
-        trans = transform.FindChild("NPc");
+        trans = transform.Find("NPc");
         NpcTrans = trans;
         if (NpcTrans != null)
-            trans = NpcTrans.FindChild("BloodItemNpc");
+            trans = NpcTrans.Find("BloodItemNpc");
         if (trans != null)
         {
             mBloodNpc = trans.GetComponent<UISlider>() as UISlider;
             mNpcBloodcmpt = trans.GetComponent<Bloodcmpt>();
         }
 
-        trans = transform.FindChild("Monster");
+        trans = transform.Find("Monster");
         MonsterTrans = trans;
         if (MonsterTrans != null)
-            trans = MonsterTrans.FindChild("BloodItemMon");
+            trans = MonsterTrans.Find("BloodItemMon");
         if (trans != null)
         {
             mBloodMonster = trans.GetComponent<UISlider>() as UISlider;
@@ -674,10 +674,10 @@ public class NpcOverHead : MonoBehaviour
         }
 
 
-        trans = transform.FindChild("Speak");
+        trans = transform.Find("Speak");
         SpeakTrans = trans;
         if (SpeakTrans != null)
-            mSpeakSentensePrefab = SpeakTrans.FindChild("SentencePrefab").GetComponent<NpcSpeakSentenseItem>();
+            mSpeakSentensePrefab = SpeakTrans.Find("SentencePrefab").GetComponent<NpcSpeakSentenseItem>();
 
         return;
     }
@@ -706,12 +706,12 @@ public class NpcOverHead : MonoBehaviour
         float offsetY = 0f;
         if (m_LowHpBar)
         {
-            //lz-2016.10.12 µÍÑªÌõ
+            //lz-2016.10.12 ï¿½ï¿½Ñªï¿½ï¿½
             offsetY = pos.y + (up* m_LowHpBarFactor);
         }
         else if (m_CircleHpBar)
         {
-            //lz-2016.10.12 »·ÈÆÑªÌõ
+            //lz-2016.10.12 ï¿½ï¿½ï¿½ï¿½Ñªï¿½ï¿½
             offsetY = pos.y;
         }
         else
@@ -755,7 +755,7 @@ public class NpcOverHead : MonoBehaviour
 
     public void SayOneWord(string _content, float _interval)
     {
-        if (mSpeakSentenseList.Count > 0)//ÌáÇ°½áÊøÉÏÒ»¾ä»°
+        if (mSpeakSentenseList.Count > 0)//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ä»°
         {
             mSpeakSentenseList[0].AheadDisappear();
         }
@@ -862,13 +862,13 @@ public class NpcOverHead : MonoBehaviour
                     {
                         if (null == m_Entity.netCmpt|| (null!=PeCreature.Instance&&m_Entity == PeCreature.Instance.mainPlayer))
                         {
-                            //lz-2016.11.07 Íæ¼Ò×Ô¼ºÏÔÊ¾ºìÉ«ÑªÌõ
+                            //lz-2016.11.07 ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½É«Ñªï¿½ï¿½
                             mCurBloodTrans = PlayerTrans;
                             mCurBloodSlider = mBloodPlayer;
                         }
                         else
                         {
-                            //lz-2016.11.07 ¶ÓÓÑÏÔÊ¾À¶É«ÑªÌõ
+                            //lz-2016.11.07 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½É«Ñªï¿½ï¿½
                             if (null!=m_Entity.netCmpt.network
                                 && null!=PeCreature.Instance&& null!=PeCreature.Instance.mainPlayer&& null!=PeCreature.Instance.mainPlayer.netCmpt&& null!=PeCreature.Instance.mainPlayer.netCmpt.network
                                 && m_Entity.netCmpt.network.TeamId == PeCreature.Instance.mainPlayer.netCmpt.network.TeamId)
@@ -878,7 +878,7 @@ public class NpcOverHead : MonoBehaviour
                             }
                             else
                             {
-                                //lz-2016.11.07 µÐÈËÏÔÊ¾ºìÉ«ÑªÌõ
+                                //lz-2016.11.07 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½É«Ñªï¿½ï¿½
                                 mCurBloodTrans = PlayerTrans;
                                 mCurBloodSlider = mBloodPlayer;
                             }
@@ -886,7 +886,7 @@ public class NpcOverHead : MonoBehaviour
                     }
                     else
                     {
-                        //lz-2016.11.07 µ¥ÈËºìÉ«ÑªÌõ
+                        //lz-2016.11.07 ï¿½ï¿½ï¿½Ëºï¿½É«Ñªï¿½ï¿½
                         mCurBloodTrans = PlayerTrans;
                         mCurBloodSlider = mBloodPlayer;
                     }

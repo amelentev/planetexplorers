@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 Shader "Voxel Creation/MultiMat" 
 {
 	Properties 
@@ -177,7 +179,7 @@ Shader "Voxel Creation/MultiMat"
 
             o.Albedo = (contributions.rgb * i.vertColor.rgb) * (1-i.vertColor.a) + i.vertColor.rgb * i.vertColor.a;
             float4 n = normalize(float4(contributions_normal.x, contributions_normal.y, contributions_normal.z, 1));
-            float3 wn = mul(_Object2World, float4(i.localNormal,0));
+            float3 wn = mul(unity_ObjectToWorld, float4(i.localNormal,0));
             float3 N_for_lighting = normalize(normalize(wn) - (n.xyz) * GetProperty(matid012, blend_mask, 2).r * _Settings2.x);
 
             o.Normal_ = N_for_lighting;

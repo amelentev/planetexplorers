@@ -46,7 +46,7 @@ public partial class PeCustomMenuc : EditorWindow
         for (int i = 0; i < tran1.childCount; i++)
         {
             Transform child1 = tran1.GetChild(i);
-            Transform child2 = tran2.FindChild(child1.name);
+            Transform child2 = tran2.Find(child1.name);
 
             if (null != child2)
             {

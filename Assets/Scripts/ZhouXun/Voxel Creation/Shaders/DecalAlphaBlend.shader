@@ -1,4 +1,6 @@
-﻿Shader "Voxel Creation/Decal AlphaBlend"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "Voxel Creation/Decal AlphaBlend"
 {
 	Properties
 	{
@@ -54,8 +56,8 @@
         
         void vert (inout appdata_full v, out Input o)
         {  
- 			o.wPos = mul(_Object2World, v.vertex).xyz;
-            o.wNorm = normalize(mul(_Object2World, float4(normalize(v.normal), 0)).xyz);
+ 			o.wPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+            o.wNorm = normalize(mul(unity_ObjectToWorld, float4(normalize(v.normal), 0)).xyz);
             o.vCol = v.color; 
 		}
 

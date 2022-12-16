@@ -499,7 +499,7 @@ public class CSUI_Hospital : MonoBehaviour
     void Start()
     {
 
-        m_MedicineAboutTreat_Use.m_Grid.transform.FindChild("Bg").gameObject.SetActive(false);
+        m_MedicineAboutTreat_Use.m_Grid.transform.Find("Bg").gameObject.SetActive(false);
         m_MedicineAboutTreat_Show.m_Grid.SetGridForbiden(false);
 
         //m_MedicineAboutTreat_Use.MedicineDragInEvent += OnPutMedicineIn;

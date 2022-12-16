@@ -536,7 +536,7 @@ namespace Pathea
 
         void CalculateAllys()
 		{
-            Profiler.BeginSample("CollectAllys");
+            UnityEngine.Profiling.Profiler.BeginSample("CollectAllys");
 			if(m_Npc != null && m_Npc.IsFollower && !m_Npc.IsOnVCCarrier && !m_Npc.IsOnRail)
 			{
 				mAllys= m_Npc.Allys;
@@ -561,7 +561,7 @@ namespace Pathea
 					}
 				}
 			}
-            Profiler.EndSample();
+            UnityEngine.Profiling.Profiler.EndSample();
 		}
 
 		bool IsDeath ()
@@ -847,7 +847,7 @@ namespace Pathea
 
 		void CalculateSectorField()
 		{
-            Profiler.BeginSample("CalculateSectorField");
+            UnityEngine.Profiling.Profiler.BeginSample("CalculateSectorField");
 			if(PeCreature.Instance != null && PeCreature.Instance.mainPlayer != null && m_mainPlayerTran == null)
 				m_mainPlayerTran =PeCreature.Instance.mainPlayer.peTrans;
 
@@ -882,7 +882,7 @@ namespace Pathea
 				else
 					m_HidePistion = Vector3.zero;
 			}
-            Profiler.EndSample();
+            UnityEngine.Profiling.Profiler.EndSample();
 		}
 
         bool MatchAttack(IAttack attack, Enemy enemy)
@@ -2142,7 +2142,7 @@ namespace Pathea
 
 		public Enemy (PeEntity argSelf, PeEntity argTarget, float argHatred = 0.0f)
 		{
-            Profiler.BeginSample("Enemy");
+            UnityEngine.Profiling.Profiler.BeginSample("Enemy");
 
             m_Entity = argSelf;
             m_EntityTarget = argTarget;
@@ -2167,7 +2167,7 @@ namespace Pathea
 //            if (m_Entity != null)
 //                m_Entity.StartCoroutine(AssessPath());
 
-            Profiler.EndSample();
+            UnityEngine.Profiling.Profiler.EndSample();
 		}
 
         void OnPathComplete(Path _p)

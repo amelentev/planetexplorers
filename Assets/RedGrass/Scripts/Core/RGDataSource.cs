@@ -205,7 +205,7 @@ namespace RedGrass
 
 		public void ReqsUpdate (int cx, int cz)
 		{
-			Profiler.BeginSample ("Req");
+			UnityEngine.Profiling.Profiler.BeginSample ("Req");
 			mReqsOutput.Clear();
 
 			IsProcessReqs = true;
@@ -259,12 +259,12 @@ namespace RedGrass
 					IsProcessReqs = false;
 				});
 			}
-			Profiler.EndSample ();
+			UnityEngine.Profiling.Profiler.EndSample ();
 		}
 
 		public void SumbmitReqs (INTVECTOR2 center)
 		{
-			Profiler.BeginSample ("sr0");
+			UnityEngine.Profiling.Profiler.BeginSample ("sr0");
 			for (int i = 0; i < mReqsOutput.discardChunk.Count; ++i)
 			{
 				mReqsOutput.discardChunk[i].Free();
@@ -278,9 +278,9 @@ namespace RedGrass
 				}
 					
 			}
-			Profiler.EndSample ();
+			UnityEngine.Profiling.Profiler.EndSample ();
 
-			Profiler.BeginSample ("sr1");
+			UnityEngine.Profiling.Profiler.BeginSample ("sr1");
 			for (int i = 0; i < mReqsOutput.reqsChunk.Count; i++)
 			{
 				if ( mReqsOutput.reqsChunk[i].isEmpty)
@@ -292,7 +292,7 @@ namespace RedGrass
 				mChunks[mReqsOutput.reqsChunk[i].xIndex, mReqsOutput.reqsChunk[i].zIndex] = mReqsOutput.reqsChunk[i];
 
 			}
-			Profiler.EndSample ();
+			UnityEngine.Profiling.Profiler.EndSample ();
 
 			mCenter = center;
 			mReqsOutput.Clear();

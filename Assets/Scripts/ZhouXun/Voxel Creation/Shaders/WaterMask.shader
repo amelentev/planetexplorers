@@ -1,4 +1,6 @@
-﻿Shader "Voxel Creation/Water Mask"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Voxel Creation/Water Mask"
 {
 	Properties
 	{
@@ -35,7 +37,7 @@
 			v2f vert (appdata_base v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.texc = v.texcoord.xy;
 				return o;
 			}

@@ -1,4 +1,6 @@
-﻿Shader "SpecialItem/TrainingRoom/BaseObject"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "SpecialItem/TrainingRoom/BaseObject"
 {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
@@ -64,7 +66,7 @@
 			{
 				Input i;
 				i.uv = v.texcoord;
-				i.world_pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				i.world_pos = UnityObjectToClipPos(v.vertex);
 				i.pos = i.world_pos.xy;		    	
 		    	return i;
 			}

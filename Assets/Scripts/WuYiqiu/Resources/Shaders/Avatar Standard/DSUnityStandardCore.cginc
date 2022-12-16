@@ -1,3 +1,6 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 #ifndef UNITY_STANDARD_CORE_INCLUDED
 #define UNITY_STANDARD_CORE_INCLUDED
 
@@ -292,11 +295,11 @@ VertexOutputForwardBase vertForwardBase (VertexInput v)
 	VertexOutputForwardBase o;
 	UNITY_INITIALIZE_OUTPUT(VertexOutputForwardBase, o);
 
-	float4 posWorld = mul(_Object2World, v.vertex);
+	float4 posWorld = mul(unity_ObjectToWorld, v.vertex);
 	#if UNITY_SPECCUBE_BOX_PROJECTION
 		o.posWorld = posWorld.xyz;
 	#endif
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 	o.projPos = o.pos;
 	o.tex = TexCoords(v);
 	o.eyeVec = NormalizePerVertexNormal(posWorld.xyz - _WorldSpaceCameraPos);
@@ -396,8 +399,8 @@ VertexOutputForwardAdd vertForwardAdd (VertexInput v)
 	VertexOutputForwardAdd o;
 	UNITY_INITIALIZE_OUTPUT(VertexOutputForwardAdd, o);
 
-	float4 posWorld = mul(_Object2World, v.vertex);
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	float4 posWorld = mul(unity_ObjectToWorld, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 	o.projPos = o.pos;
 	o.tex = TexCoords(v);
 	o.eyeVec = NormalizePerVertexNormal(posWorld.xyz - _WorldSpaceCameraPos);
@@ -469,11 +472,11 @@ VertexOutputDeferred vertDeferred (VertexInput v)
 	VertexOutputDeferred o;
 	UNITY_INITIALIZE_OUTPUT(VertexOutputDeferred, o);
 
-	float4 posWorld = mul(_Object2World, v.vertex);
+	float4 posWorld = mul(unity_ObjectToWorld, v.vertex);
 	#if UNITY_SPECCUBE_BOX_PROJECTION
 		o.posWorld = posWorld;
 	#endif
-	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos(v.vertex);
 	o.projPos = o.pos;
 	o.tex = TexCoords(v);
 	o.eyeVec = NormalizePerVertexNormal(posWorld.xyz - _WorldSpaceCameraPos);

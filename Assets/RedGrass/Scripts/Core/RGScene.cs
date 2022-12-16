@@ -168,11 +168,11 @@ namespace RedGrass
 
 		void Update ()
 		{
-			Profiler.BeginSample ("Refresh Dirty Reqs");
+			UnityEngine.Profiling.Profiler.BeginSample ("Refresh Dirty Reqs");
 			RefreshDirtyReqs();
-			Profiler.EndSample (); 
+			UnityEngine.Profiling.Profiler.EndSample (); 
 
-			Profiler.BeginSample ("Update DataSource");
+			UnityEngine.Profiling.Profiler.BeginSample ("Update DataSource");
 			UpdateDataSource();
 
 			if (!data.reqsOutput.IsEmpty() && !data.IsProcessReqs)
@@ -182,11 +182,11 @@ namespace RedGrass
 				mUpdateMesh = true;
 
 			}
-			Profiler.EndSample ();
+			UnityEngine.Profiling.Profiler.EndSample ();
 
-			Profiler.BeginSample ("Update Mesh");
+			UnityEngine.Profiling.Profiler.BeginSample ("Update Mesh");
 			UpdateMesh();
-			Profiler.EndSample (); 
+			UnityEngine.Profiling.Profiler.EndSample (); 
 
 
 

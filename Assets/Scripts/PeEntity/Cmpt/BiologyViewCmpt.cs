@@ -317,9 +317,9 @@ namespace Pathea
 
             // Send Msg
 			if (monoModelCtrlr != null)	{
-				Profiler.BeginSample("EMsg.View_Model_Build");
+				UnityEngine.Profiling.Profiler.BeginSample("EMsg.View_Model_Build");
 				Entity.SendMsg(EMsg.View_Model_Build, monoModelCtrlr.gameObject, biologyViewRoot);
-				Profiler.EndSample();
+				UnityEngine.Profiling.Profiler.EndSample();
 				yield return 0;
 			}			
 			
@@ -328,9 +328,9 @@ namespace Pathea
 			
 			if(null == Entity)
 				yield break;
-			Profiler.BeginSample("EMsg.View_Prefab_Build");
+			UnityEngine.Profiling.Profiler.BeginSample("EMsg.View_Prefab_Build");
 			Entity.SendMsg(EMsg.View_Prefab_Build, this, biologyViewRoot);
-			Profiler.EndSample ();
+			UnityEngine.Profiling.Profiler.EndSample ();
 			yield return 0;
 			
 			if(null == biologyViewRoot)

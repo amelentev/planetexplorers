@@ -351,10 +351,10 @@ public class AssetsLoader : MonoBehaviour
 	                GameObject go = Instantiate(asset, req.Prs.Position(), req.Prs.Rotation()) as GameObject;
 	                if (go != null)
 	                {
-						Profiler.BeginSample("AssetsLoader:Instantiate "+assetPathName);
+						UnityEngine.Profiling.Profiler.BeginSample("AssetsLoader:Instantiate "+assetPathName);
 	                    go.transform.localScale = req.Prs.Scale();
 	                    req.OnFinish(go);
-	                    Profiler.EndSample();
+	                    UnityEngine.Profiling.Profiler.EndSample();
 	                }
 				}
             }
@@ -428,7 +428,7 @@ public class AssetsLoader : MonoBehaviour
 #if UNITY_5_3 || UNITY_5_4
 					AssetBundle bundle = AssetBundle.LoadFromMemory(raw_data);
 #else
-					AssetBundle bundle = AssetBundle.CreateFromMemoryImmediate (raw_data);
+					AssetBundle bundle = AssetBundle.LoadFromMemory (raw_data);
 #endif				
 					asset = bundle.LoadAsset<GameObject>(Path.GetFileNameWithoutExtension(assetPathName));
 					bundle.Unload(false);

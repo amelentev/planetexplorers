@@ -18,7 +18,7 @@ namespace TrainingScene
             mMissionArrow = GameUI.Instance.mUIMinMapCtrl.mSubInfoPanel.gameObject;
         }
         
-        //lz-2016.08.03 Ïú»ÙµÄÊ±ºòÈ¡Ïû×¢²áµÄÊÂ¼þ
+        //lz-2016.08.03 ï¿½ï¿½ï¿½Ùµï¿½Ê±ï¿½ï¿½È¡ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
         void OnDestroy()
         {
             if (null!=UICompoundWndControl.OnShow)
@@ -38,20 +38,20 @@ namespace TrainingScene
         }
 
         /// <summary>
-        /// ¹Ø±ÕEnterAreaµÄÖ¸Ê¾¼ýÍ·
+        /// ï¿½Ø±ï¿½EnterAreaï¿½ï¿½Ö¸Ê¾ï¿½ï¿½Í·
         /// </summary>
         public void CloseMissionArrow()
         {
             if (mMissionArrow == null)
                 return;
-            if (mMissionArrow.transform.FindChild("MissionArrow(Clone)") == null)
+            if (mMissionArrow.transform.Find("MissionArrow(Clone)") == null)
                 return;
-            Transform misArrowTr = mMissionArrow.transform.FindChild("MissionArrow(Clone)");
+            Transform misArrowTr = mMissionArrow.transform.Find("MissionArrow(Clone)");
             misArrowTr.gameObject.SetActive(false);
         }
 
         /// <summary>
-        /// ¹Ø±ÕÐ¡µØÍ¼¹ÖµÄµã
+        /// ï¿½Ø±ï¿½Ð¡ï¿½ï¿½Í¼ï¿½ÖµÄµï¿½
         /// </summary>
         public void CloseMonsterPoint()
         {
@@ -226,7 +226,7 @@ namespace TrainingScene
             GameUI.Instance.mNPCTalk.UpdateNpcTalkInfo(new List<int> { 300241 });
             GameUI.Instance.mNPCTalk.PreShow();
 
-            //lz-2016.08.03 ÕâÀï×¢ÏúÊÂ¼þÐ´´íÁË
+            //lz-2016.08.03 ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½Â¼ï¿½Ð´ï¿½ï¿½ï¿½ï¿½
             UICompoundWndControl.OnShow -= Replicator;
             //UIWarehouse.OnShow -= Replicator;
         }
@@ -320,7 +320,7 @@ namespace TrainingScene
 
             if (null != GameUI.Instance)
             {
-                //lz-2016.11.07 UIÉÏµÄTutorialÌáÊ¾Í³Ò»¹ÜÀí¼ì²â
+                //lz-2016.11.07 UIï¿½Ïµï¿½Tutorialï¿½ï¿½Ê¾Í³Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 GameUI.Instance.CheckMissionIDShowTutorial(missionId);
             }
         }

@@ -16,8 +16,8 @@ namespace TrainingScene
 
 		void Start()
 		{
-			eff_true = transform.FindChild("effect_true").gameObject;
-			eff_false = transform.FindChild("effect_false").gameObject;
+			eff_true = transform.Find("effect_true").gameObject;
+			eff_false = transform.Find("effect_false").gameObject;
 			et = EmitlineTask.Instance;
 			receiver1 = et.receivers[0].colreceiver;//竖着的那个
 			receiver2 = et.receivers[1].colreceiver;//平放的那个

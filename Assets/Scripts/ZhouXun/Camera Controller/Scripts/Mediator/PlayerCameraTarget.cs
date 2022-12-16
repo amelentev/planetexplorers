@@ -12,7 +12,7 @@ public class PlayerCameraTarget : MonoBehaviour
 		{
 			_pelvis = Utils.GetChild(this.transform, "Bip01 Pelvis");
 			string trans_name = "CamTar";
-			Transform trans = transform.FindChild(trans_name);
+			Transform trans = transform.Find(trans_name);
 			if (null == trans)
 			{
 				GameObject obj = new GameObject(trans_name);
@@ -32,7 +32,7 @@ public class PlayerCameraTarget : MonoBehaviour
 		get
 		{
 			string trans_name = "ShootCamTar";
-			Transform trans = transform.FindChild(trans_name);
+			Transform trans = transform.Find(trans_name);
 	        if (null == trans)
 	        {
 				GameObject obj = new GameObject(trans_name);

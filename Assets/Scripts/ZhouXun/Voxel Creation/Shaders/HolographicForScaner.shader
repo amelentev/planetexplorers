@@ -1,3 +1,6 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "zhouxun/HolographicForScan"
 {
 	Properties
@@ -53,8 +56,8 @@ Shader "zhouxun/HolographicForScan"
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.v_pos.xyz = mul(_Object2World, v.vertex);	
+				o.pos = UnityObjectToClipPos(v.vertex);
+				o.v_pos.xyz = mul(unity_ObjectToWorld, v.vertex);	
 				return o;
 			}
 			

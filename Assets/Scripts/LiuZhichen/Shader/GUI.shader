@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "MyShader/GUI" {
 
 		Properties 
@@ -28,7 +30,7 @@ Shader "MyShader/GUI" {
 				v2f vert (appdata_base v)
 				{
 					v2f o;
-					o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+					o.pos = UnityObjectToClipPos (v.vertex);
 					o.uv = TRANSFORM_UV(0);
 					return o;
 				}

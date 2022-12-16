@@ -1,4 +1,6 @@
-﻿Shader "RedGrass/Particle Set (MultiMat)" 
+﻿// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
+Shader "RedGrass/Particle Set (MultiMat)" 
 {
 	Properties 
 	{
@@ -119,7 +121,7 @@
  			
  			// calculate final vertices
 			v.vertex = float4(v.normal, 0) + float4(billboard_vert, 1) + float4(life*life*(randval.x*2-1),life*life*(2.5*randval.y+1.5),life*life*(randval.z*2-1),0); 
-			v.vertex = mul(_World2Object, v.vertex); // disable obj2world matrix (used for disable camera clipping)
+			v.vertex = mul(unity_WorldToObject, v.vertex); // disable obj2world matrix (used for disable camera clipping)
 			
 			// fetch vertex normal
 			v.normal = norm;

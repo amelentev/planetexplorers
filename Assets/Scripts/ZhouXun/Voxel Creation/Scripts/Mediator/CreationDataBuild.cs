@@ -294,7 +294,7 @@ public partial class CreationData
                 {
                     pivot = cdata.m_Entity.transform;
                     //SingleHandSword
-                    Transform go = cdata.m_Entity.transform.FindChild("SingleHandSword");//VCConfig.s_Parts[cdata.m_ComponentId].m_ResObj  
+                    Transform go = cdata.m_Entity.transform.Find("SingleHandSword");//VCConfig.s_Parts[cdata.m_ComponentId].m_ResObj  
                     go.gameObject.name = "SingleHandSwordL";
                     m_RootL.transform.localRotation = Quaternion.Inverse(pivot.rotation);
                     m_RootL.transform.Rotate(Vector3.up, -90, Space.World);
@@ -310,7 +310,7 @@ public partial class CreationData
                 {
                     pivot = cdata.m_Entity.transform;
 
-                    Transform go = cdata.m_Entity.transform.FindChild("SingleHandSword");
+                    Transform go = cdata.m_Entity.transform.Find("SingleHandSword");
                     go.gameObject.name = "SingleHandSwordR";
 
 

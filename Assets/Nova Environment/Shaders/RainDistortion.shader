@@ -1,4 +1,6 @@
-﻿Shader "NovaEnv/Rain Distortion"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "NovaEnv/Rain Distortion"
 {
 	Properties
 	{
@@ -60,7 +62,7 @@
 			v2f vert(appdata_distort v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.texc = v.texcoord;
 				o.projpos = o.pos;
 				o.color = v.color;
@@ -128,7 +130,7 @@
 			v2f vert(appdata_base v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.texc = v.texcoord;
 				return o;
 			}

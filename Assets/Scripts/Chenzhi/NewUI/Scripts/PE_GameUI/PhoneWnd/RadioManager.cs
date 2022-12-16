@@ -413,7 +413,7 @@ public class RadioManager : MonoBehaviour
         yield return www;
         if (null != www)
         {
-            AudioClip clip = www.audioClip;
+            AudioClip clip = www.GetAudioClip();
             if (null != clip)
             {
                 while (clip.loadState == AudioDataLoadState.Loading)

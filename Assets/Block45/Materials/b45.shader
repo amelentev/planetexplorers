@@ -1,4 +1,6 @@
-﻿Shader "Custom/b45" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "Custom/b45" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_BumpMap ("BumpMap", 2D) = "bump" {}
@@ -31,7 +33,7 @@
 		void vert (inout appdata_full v, out Input o)
 		{
 			UNITY_INITIALIZE_OUTPUT(Input, o);
-		    o.world_pos = mul (_Object2World, v.vertex);		    
+		    o.world_pos = mul (unity_ObjectToWorld, v.vertex);		    
 		    o.world_normal = v.normal.xyz;
 		}
 

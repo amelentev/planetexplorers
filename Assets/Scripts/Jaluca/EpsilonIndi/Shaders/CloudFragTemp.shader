@@ -1,4 +1,7 @@
-﻿Shader "SpecialItem/CloudFragTemp"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "SpecialItem/CloudFragTemp"
 {
 	Properties
 	{
@@ -55,10 +58,10 @@
 			{
 				Input o;	
 							
-			    o.world_pos = mul(UNITY_MATRIX_MVP, v.vertex);
+			    o.world_pos = UnityObjectToClipPos(v.vertex);
 			    o.texcoord = v.texcoord;
-			    o.world_normal = normalize(mul(_Object2World, float4(v.normal.xyz,0)).xyz);
-			    o.viewDir = normalize(mul(_Object2World, ObjSpaceViewDir(v.vertex)).xyz);
+			    o.world_normal = normalize(mul(unity_ObjectToWorld, float4(v.normal.xyz,0)).xyz);
+			    o.viewDir = normalize(mul(unity_ObjectToWorld, ObjSpaceViewDir(v.vertex)).xyz);
 			    return o;
 			}
 			half4 frag (Input IN) : COLOR

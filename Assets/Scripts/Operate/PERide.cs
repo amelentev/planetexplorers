@@ -119,9 +119,9 @@ namespace Pathea.Operate
                     FullBodyBipedIK monsterFullIK = monsterEntity.GetComponentInChildren<FullBodyBipedIK>();
                     if (monsterFullIK)
                     {
-                        Transform minIKRoot = monsterFullIK.transform.FindChild("BeRideMin");
-                        Transform maxIKRoot = monsterFullIK.transform.FindChild("BeRideMax");
-                        Transform runIKRoot = monsterFullIK.transform.FindChild("BeRide");
+                        Transform minIKRoot = monsterFullIK.transform.Find("BeRideMin");
+                        Transform maxIKRoot = monsterFullIK.transform.Find("BeRideMax");
+                        Transform runIKRoot = monsterFullIK.transform.Find("BeRide");
                         if (minIKRoot && maxIKRoot && runIKRoot)
                         {
                             Dictionary<FullBodyBipedEffector, Transform> minIKTransDic, maxIKTransDic, runIKTransDic;

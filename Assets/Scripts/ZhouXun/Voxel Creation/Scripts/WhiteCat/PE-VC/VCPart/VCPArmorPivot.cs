@@ -50,8 +50,8 @@ namespace WhiteCat
 					{
 						var grounp = new BoneGroup();
 						grounp.bonePivot = child;
-						grounp.maleModel = child.FindChild("MaleModel").gameObject;
-						grounp.femalModel = child.FindChild("FemaleModel").gameObject;
+						grounp.maleModel = child.Find("MaleModel").gameObject;
+						grounp.femalModel = child.Find("FemaleModel").gameObject;
 						_boneGroups.Add(grounp);
                     }
 				}

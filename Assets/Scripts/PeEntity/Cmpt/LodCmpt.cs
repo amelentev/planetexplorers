@@ -138,9 +138,9 @@ namespace Pathea
 			}
 
             //if (Entity.Equals(PeCreature.Instance.mainPlayer))
-            //    Debug.LogError("OnActivate £º " + Time.time);
+            //    Debug.LogError("OnActivate ï¿½ï¿½ " + Time.time);
 
-			Profiler.BeginSample ("LodActive:"+name);
+			UnityEngine.Profiling.Profiler.BeginSample ("LodActive:"+name);
 
             CancelInvoke("FadeOut");
             CancelInvoke("DelayDestroy");
@@ -155,7 +155,7 @@ namespace Pathea
             Entity.SendMsg(EMsg.Lod_Collider_Created);
             if (onActivate != null)
                 onActivate(Entity);
-			Profiler.EndSample ();
+			UnityEngine.Profiling.Profiler.EndSample ();
         }
 		public virtual void OnDeactivate()
         {
@@ -165,7 +165,7 @@ namespace Pathea
 			}
 
             //if (Entity.Equals(PeCreature.Instance.mainPlayer))
-            //    Debug.LogError("OnDeactivate £º " + Time.time);
+            //    Debug.LogError("OnDeactivate ï¿½ï¿½ " + Time.time);
 
             //			if(Entity.IsDeath())
             //				DestroyView();

@@ -476,8 +476,8 @@ public class SteamAchievementsSystem : MonoBehaviour
                     int[] details = new int[pCallback.m_cEntryCount];
                     SteamUserStats.GetDownloadedLeaderboardEntry(pCallback.m_hSteamLeaderboardEntries, i, out leaderboardEntry, details, pCallback.m_cEntryCount);
                     Debug.LogError("用户ID：" + leaderboardEntry.m_steamIDUser + "用户分数" + leaderboardEntry.m_nScore + "用户排名" + leaderboardEntry.m_nGlobalRank + "Details" + leaderboardEntry.m_cDetails + "  " + SteamFriends.GetFriendPersonaName(leaderboardEntry.m_steamIDUser));
-                    gos[i].transform.FindChild("name").GetComponent<UILabel>().text = leaderboardEntry.m_nGlobalRank + "  " + SteamFriends.GetFriendPersonaName(leaderboardEntry.m_steamIDUser);
-                    gos[i].transform.FindChild("score").GetComponent<UILabel>().text = leaderboardEntry.m_nScore + "";
+                    gos[i].transform.Find("name").GetComponent<UILabel>().text = leaderboardEntry.m_nGlobalRank + "  " + SteamFriends.GetFriendPersonaName(leaderboardEntry.m_steamIDUser);
+                    gos[i].transform.Find("score").GetComponent<UILabel>().text = leaderboardEntry.m_nScore + "";
                 }
 
             }
@@ -503,8 +503,8 @@ public class SteamAchievementsSystem : MonoBehaviour
         {
             Debug.LogError("成功上传价值数据：" + pCallback.m_nScore + "榜内数据是否需要变更：" + pCallback.m_bScoreChanged
                 + "新的排名：" + pCallback.m_nGlobalRankNew + "上次排名：" + pCallback.m_nGlobalRankPrevious);
-            gos[gos.Count - 1].transform.FindChild("name").GetComponent<UILabel>().text = pCallback.m_nGlobalRankNew + "  " + SteamFriends.GetPersonaName();
-            gos[gos.Count - 1].transform.FindChild("score").GetComponent<UILabel>().text = pCallback.m_nScore + "";
+            gos[gos.Count - 1].transform.Find("name").GetComponent<UILabel>().text = pCallback.m_nGlobalRankNew + "  " + SteamFriends.GetPersonaName();
+            gos[gos.Count - 1].transform.Find("score").GetComponent<UILabel>().text = pCallback.m_nScore + "";
             if (pCallback.m_nGlobalRankPrevious == 0 || pCallback.m_bScoreChanged != 0)
             {
 

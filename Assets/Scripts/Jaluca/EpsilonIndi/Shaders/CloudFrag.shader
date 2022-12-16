@@ -1,4 +1,6 @@
-﻿Shader "SpecialItem/CloudFrag" 
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "SpecialItem/CloudFrag" 
 {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
@@ -40,7 +42,7 @@
 		{
 			o.uv_MainTex = v.texcoord.xy;
 		    o.world_pos = v.vertex;
-		    o.world_normal = normalize(mul(_Object2World, float4(v.normal.xyz,0)).xyz);
+		    o.world_normal = normalize(mul(unity_ObjectToWorld, float4(v.normal.xyz,0)).xyz);
 		    o.viewDir = ObjSpaceViewDir(v.vertex);
 		}		
 		void surf (Input IN, inout SurfaceOutput o) {

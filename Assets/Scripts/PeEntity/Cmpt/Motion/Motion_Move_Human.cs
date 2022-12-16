@@ -676,7 +676,7 @@ namespace Pathea
 //				return;
 			if(Entity.motionMgr.IsActionRunning(PEActionType.GetOnTrain)
 			   || Entity.motionMgr.IsActionRunning(PEActionType.Drive)
-               || Entity.HasMount) //lz-2017.02.17 ÓÐ×øÆïÖ®ºó²»ÓÃÐÐÎªÈ¥ÒÆ¶¯Î»ÖÃ£¬¶øÊÇ±¾µØÄ£Äâ
+               || Entity.HasMount) //lz-2017.02.17 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÈ¥ï¿½Æ¶ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
 				return;
 			if(m_NetMove)
 			{
@@ -1021,9 +1021,9 @@ namespace Pathea
 						if(state != MovementState.Water && !Entity.motionMgr.IsActionRunning(PEActionType.Glider))
 							m_MoveRequest = Vector3.ProjectOnPlane(m_MoveRequest, Vector3.up);
 					
-						Profiler.BeginSample("HumanCalculateAvoid");
+						UnityEngine.Profiling.Profiler.BeginSample("HumanCalculateAvoid");
 						HumanCalculateAvoid(m_MoveRequest);
-						Profiler.EndSample();
+						UnityEngine.Profiling.Profiler.EndSample();
 
 						m_MoveRequest = m_MoveRequest.normalized + m_CurAvoidDirection.normalized;
 

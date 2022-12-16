@@ -70,7 +70,7 @@ public class PEHearing : PEPerception
         if ((m_FrameCount & 0x0f) != 0)
             return;
 
-        Profiler.BeginSample("Hearing");
+        UnityEngine.Profiling.Profiler.BeginSample("Hearing");
         m_Entities.Clear();
 
         Vector3 pos = transform.position;
@@ -87,7 +87,7 @@ public class PEHearing : PEPerception
 				}
 			}
 		}
-        Profiler.EndSample();
+        UnityEngine.Profiling.Profiler.EndSample();
     }
 
     IEnumerator Buff(float value, float time)

@@ -71,8 +71,8 @@ public class ViewCameraControler : MonoBehaviour
 		mBlurEffect.blurSpread = 0;
 #endif
 		mLight = new Light[2];
-		mLight[0] = transform.FindChild("Pointlight1").GetComponent<Light>();
-		mLight[1] = transform.FindChild("Pointlight2").GetComponent<Light>();
+		mLight[0] = transform.Find("Pointlight1").GetComponent<Light>();
+		mLight[1] = transform.Find("Pointlight2").GetComponent<Light>();
 		mAlwaysActive = alwaysActive;
 		
 		mRenderTexture = new RenderTexture(512, 512,16);
@@ -135,7 +135,7 @@ public class ViewCameraControler : MonoBehaviour
 			break;
 		case ViewPart.VP_Head:
 			{
-				mTargetTran = mTargetObj.transform.FindChild("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
+				mTargetTran = mTargetObj.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
 				if(mTargetTran != null)
 				{
 					transform.parent = mTargetTran;
@@ -150,7 +150,7 @@ public class ViewCameraControler : MonoBehaviour
 			break;
 		case ViewPart.VP_BigHead:
 			{
-				mTargetTran = mTargetObj.transform.FindChild("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
+				mTargetTran = mTargetObj.transform.Find("Bip01/Bip01 Pelvis/Bip01 Spine1/Bip01 Spine2/Bip01 Spine3/Bip01 Neck/Bip01 Head");
 				if(mTargetTran != null)
 				{
 					transform.parent = mTargetTran;

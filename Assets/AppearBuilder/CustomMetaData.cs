@@ -40,7 +40,7 @@ namespace CustomCharactor
 #endif
 				return null;
 			}
-			Transform tPart = goModel.transform.FindChild(ModelName);
+			Transform tPart = goModel.transform.Find(ModelName);
 			if (null == tPart){
 #if UNITY_EDITOR
 				//Debug.LogError("[CustomPartPathName]part:" + ModelFilePath + " has no model:" + ModelName);

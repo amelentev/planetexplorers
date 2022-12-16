@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Xffect/heat_distortion" {
 Properties {
 	_NoiseTex ("Noise Texture (RG)", 2D) = "white" {}
@@ -51,7 +53,7 @@ sampler2D _MainTex;
 v2f vert (appdata_t v)
 {
 	v2f o;
-	o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+	o.vertex = UnityObjectToClipPos(v.vertex);
 	#if UNITY_UV_STARTS_AT_TOP
 	float scale = -1.0;
 	#else

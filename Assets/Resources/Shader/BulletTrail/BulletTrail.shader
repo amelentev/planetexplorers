@@ -1,4 +1,7 @@
-﻿Shader "zhouxun/Bullet/Bullet Trail"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "zhouxun/Bullet/Bullet Trail"
 {
 	Properties
 	{
@@ -47,9 +50,9 @@
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.texc = v.texcoord.xy;
-				o.wpos = mul(_Object2World, v.vertex).xyz;
+				o.wpos = mul(unity_ObjectToWorld, v.vertex).xyz;
 				o.color.rgba = v.color.rgba;	
 				return o;
 			}

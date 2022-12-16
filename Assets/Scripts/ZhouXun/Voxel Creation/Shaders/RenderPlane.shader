@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Voxel Creation/RenderPlane"
 {
 	Properties
@@ -37,7 +39,7 @@ Shader "Voxel Creation/RenderPlane"
 			v2f vert (appdata_v v)
 			{
 				v2f o;
-				o.pos = mul( UNITY_MATRIX_MVP, v.vertex);				
+				o.pos = UnityObjectToClipPos( v.vertex);				
 				o.texc = v.texcoord;	
 				return o;
 			}

@@ -1,4 +1,7 @@
-﻿Shader "zhouxun/RoadDecal"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "zhouxun/RoadDecal"
 {
 	Properties
 	{
@@ -55,8 +58,8 @@
 			v2f vert (appdata_road v)
 			{
 				v2f o; 
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.tPos = mul(_Object2World, v.vertex).xyz - _TileOffset;
+				o.pos = UnityObjectToClipPos(v.vertex);
+				o.tPos = mul(unity_ObjectToWorld, v.vertex).xyz - _TileOffset;
 				return o;
 			}
 			
