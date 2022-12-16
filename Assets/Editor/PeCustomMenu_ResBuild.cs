@@ -85,7 +85,7 @@ public partial class PeCustomMenuc : EditorWindow
             build.assetNames = new string[] { AssetDatabase.GetAssetPath(Selection.objects[i]) };
             builds.Add(build);
 		}
-        BuildPipeline.BuildAssetBundles(dirPath, builds.ToArray());
+		BuildPipeline.BuildAssetBundles(dirPath, builds.ToArray(), BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
 
 		for (int i = 0; i < nGo; i++) {
 			CorruptShaderReplacement.ReplaceShaderShellWithEntity(Selection.gameObjects[i]);
@@ -170,7 +170,7 @@ public partial class PeCustomMenuc : EditorWindow
 		// Build the resource file from the active selection.
 		if(bNoTrack)
 		{
-			BuildPipeline.BuildAssetBundle(mainAsset, assets , path); 
+			BuildPipeline.BuildAssetBundle(mainAsset, assets, path, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
 		}
 		else
 		{
