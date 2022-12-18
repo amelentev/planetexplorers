@@ -401,11 +401,7 @@ public class CamController : MonoBehaviour
 		ClearEffects();
 		ClearModes();
 		Cursor.lockState = Screen.fullScreen? CursorLockMode.Confined: CursorLockMode.None;
-#if UNITY_5
 		Cursor.visible = true;
-#else		
-		Screen.showCursor = true;
-#endif
 	}
 
 	// Create Modifier
@@ -484,11 +480,7 @@ public class CamController : MonoBehaviour
 		else
 		{
 			Cursor.lockState = Screen.fullScreen? CursorLockMode.Confined: CursorLockMode.None;
-#if UNITY_5
 			Cursor.visible = true;
-#else			
-			Screen.showCursor = true;
-#endif
 		}
 	}
 	

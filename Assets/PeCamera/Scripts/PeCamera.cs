@@ -83,7 +83,7 @@ public static class PeCamera
 
 	public static void UnsetVar (string name) { SetVar(name, Var.Null); }
 	public static void SetVar (string name, Var value) { if (!Check()) return; camc.SetVar(name, value); }
-	public static void SetPose (string name, Pose pose) { if (!Check()) return; camc.SetPose(name, pose); }
+	public static void SetPose (string name, CameraForge.Pose pose) { if (!Check()) return; camc.SetPose(name, pose); }
 	public static void UnsetPose (string name) { if (!Check()) return; camc.UnsetPose(name); }
 	public static void SetTransform (string name, Transform t) { UserVarManager.SetTransform(name, t); }
 	public static void UnsetTransform (string name) { UserVarManager.UnsetTransform(name); }
@@ -93,7 +93,7 @@ public static class PeCamera
 	public static Var GetVar (string name) { if (!Check()) return Var.Null; return camc.GetVar(name); }
 	public static Var GetGlobalVar (string name) { return UserVarManager.GetGlobalVar(name); }
 	public static Transform GetTransform (string name) { return UserVarManager.GetTransform(name); }
-	public static Pose GetPose (string name) { if (!Check()) return Pose.Default; return camc.GetPose(name); }
+	public static CameraForge.Pose GetPose (string name) { if (!Check()) return CameraForge.Pose.Default; return camc.GetPose(name); }
 	
 	public static void CrossFade (string blender, int index, float speed = 0.3f)
 	{

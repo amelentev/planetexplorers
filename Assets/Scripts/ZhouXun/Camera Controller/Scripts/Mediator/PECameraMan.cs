@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-#if UNITY_5
 using SSAOEffect = SSAOPro;
 using AntialiasingAsPostEffect = UnityStandardAssets.ImageEffects.Antialiasing;
 using DepthOfField34 = UnityStandardAssets.ImageEffects.DepthOfField;
-#endif
 
 public class PECameraMan : MonoBehaviour
 {

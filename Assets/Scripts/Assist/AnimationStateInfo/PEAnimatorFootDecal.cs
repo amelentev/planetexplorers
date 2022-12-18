@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Experimental.Director;
 
 public class PEAnimatorFootDecal : StateMachineBehaviour
 {

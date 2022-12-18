@@ -1,9 +1,7 @@
 using UnityEngine;
 using System.Collections;
-#if UNITY_5
 using GrayscaleEffect = UnityStandardAssets.ImageEffects.Grayscale;
 using BloomAndLensFlares = UnityStandardAssets.ImageEffects.BloomAndFlares;
-#endif
 
 public class PlayerDeathEffect : MonoBehaviour 
 {
@@ -43,31 +41,19 @@ public class PlayerDeathEffect : MonoBehaviour
 			return;
 		if ( GrayScale < 0.001f )
 		{
-#if UNITY_5
 			gs.rampOffset = 0;
-#else
-			gs.grayAmount = 0;
-#endif
 			gs.enabled = false;
 		}
 		else
 		{
 			gs.enabled = true;
-#if UNITY_5
 			gs.rampOffset = GrayScale;
-#else
-			gs.grayAmount = GrayScale;
-#endif
 		}
 		if ( bf == null )
 			return;
 		if ( bf.enabled )
 		{
-#if UNITY_5
 			bf.bloomThreshold = BlurThreshold;
-#else
-			bf.bloomThreshhold = BlurThreshold;
-#endif
 		}
 	}
 	

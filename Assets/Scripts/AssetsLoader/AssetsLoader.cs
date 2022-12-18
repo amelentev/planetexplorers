@@ -425,11 +425,7 @@ public class AssetsLoader : MonoBehaviour
 					r.Close();
 					fs.Close();
 
-#if UNITY_5_3 || UNITY_5_4
 					AssetBundle bundle = AssetBundle.LoadFromMemory(raw_data);
-#else
-					AssetBundle bundle = AssetBundle.LoadFromMemory (raw_data);
-#endif				
 					asset = bundle.LoadAsset<GameObject>(Path.GetFileNameWithoutExtension(assetPathName));
 					bundle.Unload(false);
 				}			

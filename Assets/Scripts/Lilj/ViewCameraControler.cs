@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections;
-#if UNITY_5
 using BlurEffect = UnityStandardAssets.ImageEffects.BlurOptimized;
-#endif
 
 /// <summary>
 /// NODES : 旧的照相功能，现在已经没有用， 请使用新版
@@ -63,13 +61,8 @@ public class ViewCameraControler : MonoBehaviour
 		GetComponent<Camera>().farClipPlane = 3f;
 		mGetPictrue = false;
 		mBlurEffect = gameObject.AddComponent<BlurEffect>();
-#if UNITY_5
 		mBlurEffect.blurIterations = 0;
 		mBlurEffect.blurSize = 0;
-#else
-		mBlurEffect.iterations = 0;
-		mBlurEffect.blurSpread = 0;
-#endif
 		mLight = new Light[2];
 		mLight[0] = transform.Find("Pointlight1").GetComponent<Light>();
 		mLight[1] = transform.Find("Pointlight2").GetComponent<Light>();

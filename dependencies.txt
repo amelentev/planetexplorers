@@ -1,0 +1,9 @@
+Required assets:
+AStarPathfindingProject https://arongranberg.com/astar/download
+DunGen: https://assetstore.unity.com/packages/tools/utilities/dungen-15682
+Assets -> Import Package -> CrossPlatformInput, Effects, Vehicles (use old, Unity 5.2 versions :( )
+...
+
+Required files:
+if needed, copy System.Data.dll from unity to Assets/Plugins/ManagedDlls/
+copy or link "VoxelData" dir from steam game

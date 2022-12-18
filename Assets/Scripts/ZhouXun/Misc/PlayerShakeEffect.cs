@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections;
-#if UNITY_5
 using MotionBlur = UnityStandardAssets.ImageEffects.MotionBlur;
-#endif
 
 public class PlayerShakeEffect : MonoBehaviour 
 {

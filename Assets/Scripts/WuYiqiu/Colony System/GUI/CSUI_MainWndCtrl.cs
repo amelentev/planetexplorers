@@ -755,9 +755,7 @@ public class CSUI_MainWndCtrl : UIBaseWnd
         m_Windows.m_EngineeringUI.CloseLock();
         mWndPartTag = mWndPartType;
         mSkillLock.gameObject.SetActive(!IsUnLock(mWndPartType));
-#if UNITY_5
         bool active = isActiveAndEnabled;
-#endif
         // Assembly
         if (mWndPartType == CSConst.dtAssembly)
         {

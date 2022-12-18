@@ -456,7 +456,7 @@ namespace CameraForgeEditor
 						if (inRect)
 						{
 							draggingPoseSlot.input = posenode;
-							draggingPoseSlot.value = Pose.Default;
+							draggingPoseSlot.value = CameraForge.Pose.Default;
 						}
 					}
 					

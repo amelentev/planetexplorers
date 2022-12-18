@@ -2,9 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-#if UNITY_5
 using AntialiasingAsPostEffect = UnityStandardAssets.ImageEffects.Antialiasing;
-#endif
 
 public class UIOption : UIStaticWnd
 {

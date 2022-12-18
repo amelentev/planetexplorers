@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mono.Data.SqliteClient;
-using UnityEngine.Experimental.Director;
 using Pathea;
 
 public class HumanSoundData
