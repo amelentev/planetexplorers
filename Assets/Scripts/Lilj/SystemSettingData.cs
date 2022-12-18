@@ -1017,9 +1017,6 @@ public class SystemSettingData
 	{
 		if(LoadedData)
 			return;
-
-		if(null == InControl.InControlManager.Instance)
-			Debug.LogError("InControlManager isn't init.");
 		
 		mFilepath = GameConfig.GetUserDataPath() + GameConfig.ConfigDataDir;
         if (!Directory.Exists(mFilepath))

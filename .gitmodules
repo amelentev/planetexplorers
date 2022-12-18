@@ -1,0 +1,3 @@
+[submodule "submodules/InControl"]
+	path = submodules/InControl
+	url = https://github.com/pbhogan/InControl.git
