@@ -1,6 +1,7 @@
 Required assets:
 AStarPathfindingProject https://arongranberg.com/astar/download
 DunGen: https://assetstore.unity.com/packages/tools/utilities/dungen-15682
+Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET/releases/download/15.0.1/Steamworks.NET_15.0.1.unitypackage
 Assets -> Import Package -> CrossPlatformInput, Effects, Vehicles (use old, Unity 5.2 versions :( )
 ...
 
