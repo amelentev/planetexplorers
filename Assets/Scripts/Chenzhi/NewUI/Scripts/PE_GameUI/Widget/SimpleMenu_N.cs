@@ -31,8 +31,8 @@ public class SimpleMenu_N : MonoBehaviour
 	{
 		//mExpansion = false;
 		mSelections = new List<MenuSelection_N>();
-		mExpansionTrigger.transform.localPosition = (mCurSelection.Size.x + mExpansionBg.sprite.paddingLeft) * Vector3.right;
-		mExpansionBg.transform.localPosition = mExpansionBg.sprite.paddingTop * Vector3.up;
+		mExpansionTrigger.transform.localPosition = (mCurSelection.Size.x + mExpansionBg.GetAtlasSprite().paddingLeft) * Vector3.right;
+		mExpansionBg.transform.localPosition = mExpansionBg.GetAtlasSprite().paddingTop * Vector3.up;
 	}
 	
 	public string CurSelection
@@ -77,8 +77,8 @@ public class SimpleMenu_N : MonoBehaviour
 			if(selections.Count > mSelNumPerPage)
 			{
 				mScrollBar.gameObject.SetActive(true);
-				mExpansionBg.transform.localScale = new Vector3(mExpansionBg.sprite.paddingLeft + mExpansionBg.sprite.paddingRight + mCurSelection.Size.x
-					, mExpansionBg.sprite.paddingTop + mExpansionBg.sprite.paddingBottom + 10f * mCurSelection.Size.y, 1);
+				mExpansionBg.transform.localScale = new Vector3(mExpansionBg.GetAtlasSprite().paddingLeft + mExpansionBg.GetAtlasSprite().paddingRight + mCurSelection.Size.x
+					, mExpansionBg.GetAtlasSprite().paddingTop + mExpansionBg.GetAtlasSprite().paddingBottom + 10f * mCurSelection.Size.y, 1);
 				mExpansionBg.transform.localScale += 10f * Vector3.right;
 				mScrollBar.transform.localPosition = new Vector3(mExpansionBg.transform.localScale.x - 5f, -5, 0);
 				mScrollBar.background.transform.localScale = new Vector3(4f, mExpansionBg.transform.localScale.y - 10f, 0);
@@ -86,8 +86,8 @@ public class SimpleMenu_N : MonoBehaviour
 			else
 			{
 				mScrollBar.gameObject.SetActive(false);
-				mExpansionBg.transform.localScale = new Vector3(mExpansionBg.sprite.paddingLeft + mExpansionBg.sprite.paddingRight + mCurSelection.Size.x
-					, mExpansionBg.sprite.paddingTop + mExpansionBg.sprite.paddingBottom + (selections.Count) * mCurSelection.Size.y, 1);
+				mExpansionBg.transform.localScale = new Vector3(mExpansionBg.GetAtlasSprite().paddingLeft + mExpansionBg.GetAtlasSprite().paddingRight + mCurSelection.Size.x
+					, mExpansionBg.GetAtlasSprite().paddingTop + mExpansionBg.GetAtlasSprite().paddingBottom + (selections.Count) * mCurSelection.Size.y, 1);
 			}
 			mSelPanel.clipRange = new Vector4(mExpansionBg.transform.localScale.x / 2f, -mExpansionBg.transform.localScale.y / 2f
 												, mExpansionBg.transform.localScale.x, mExpansionBg.transform.localScale.y);
