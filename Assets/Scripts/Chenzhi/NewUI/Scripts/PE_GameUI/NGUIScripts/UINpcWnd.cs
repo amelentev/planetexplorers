@@ -531,6 +531,7 @@ public class UINpcWnd : UIBaseWnd
 
         //		ReposTable();
         mUITable.Reposition();
+        mUITable.repositionNow = true;
     }
 
     void NpcOnColonyRoad() 

@@ -20,6 +20,7 @@ public class ToolTipsMgr : MonoBehaviour
 	{
 		if(null != content)
 		{
+			content = content.Replace("\\n", "\n");
 			mContent.text = content;
 			mLine.gameObject.SetActive(true);
 			if(content.Contains("[meat]"))
