@@ -1,3 +1,6 @@
 [submodule "submodules/InControl"]
 	path = submodules/InControl
 	url = https://github.com/pbhogan/InControl.git
+[submodule "submodules/NGUI270Revive-pe"]
+	path = submodules/NGUI270Revive-pe
+	url = https://github.com/amelentev/NGUI270Revive-pe.git
