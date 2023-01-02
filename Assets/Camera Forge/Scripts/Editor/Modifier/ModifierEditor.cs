@@ -36,7 +36,7 @@ namespace CameraForgeEditor
 					mouseDownPos = Event.current.mousePosition;
 					mouseDownCenter = modifier.graphCenter;
 				}
-				if (Event.current.rawType == EventType.mouseUp)
+				if (Event.current.rawType == EventType.MouseUp)
 				{
 					mouseDown = false;
 				}
@@ -246,7 +246,7 @@ namespace CameraForgeEditor
 						EndEditingSlot();
 					}
 				}
-				if (Event.current.type == EventType.keyDown)
+				if (Event.current.type == EventType.KeyDown)
 				{
 					if (Event.current.keyCode == KeyCode.Return || 
 					    Event.current.keyCode == KeyCode.KeypadEnter ||
@@ -271,7 +271,7 @@ namespace CameraForgeEditor
 		// Menu
 		static void PopupMenu ()
 		{
-			if (Event.current != null && Event.current.type == EventType.mouseDown)
+			if (Event.current != null && Event.current.type == EventType.MouseDown)
 			{
 				if (Event.current.button == 1)
 					ModifierEditorMenu.Popup(Event.current.mousePosition, Content2Node(Event.current.mousePosition));
@@ -312,7 +312,7 @@ namespace CameraForgeEditor
 			}
 			
 			// Delete this node
-			if (draggingSlot == null && editingSlot == null && Event.current != null && Event.current.type == EventType.mouseDown)
+			if (draggingSlot == null && editingSlot == null && Event.current != null && Event.current.type == EventType.MouseDown)
 			{
 				if (Event.current.button == 1 && Event.current.mousePosition.y < 16)
 				{

@@ -44,7 +44,7 @@ namespace CameraForgeEditor
 					mouseDownPos = Event.current.mousePosition;
 					mouseDownCenter = controller.graphCenter;
 				}
-				if (Event.current.rawType == EventType.mouseUp)
+				if (Event.current.rawType == EventType.MouseUp)
 				{
 					mouseDown = false;
 				}
@@ -506,7 +506,7 @@ namespace CameraForgeEditor
 						EndEditingSlot();
 					}
 				}
-				if (Event.current.type == EventType.keyDown)
+				if (Event.current.type == EventType.KeyDown)
 				{
 					if (Event.current.keyCode == KeyCode.Return || 
 					    Event.current.keyCode == KeyCode.KeypadEnter ||
@@ -531,7 +531,7 @@ namespace CameraForgeEditor
 		// Menu
 		static void PopupMenu ()
 		{
-			if (Event.current != null && Event.current.type == EventType.mouseDown)
+			if (Event.current != null && Event.current.type == EventType.MouseDown)
 			{
 				if (Event.current.button == 1)
 					ControllerEditorMenu.Popup(Event.current.mousePosition, Content2Node(Event.current.mousePosition));
@@ -601,7 +601,7 @@ namespace CameraForgeEditor
 			
 			// Delete this node
 			if (draggingSlot == null && draggingPoseSlot == null && editingSlot == null 
-			    && Event.current != null && Event.current.type == EventType.mouseDown)
+			    && Event.current != null && Event.current.type == EventType.MouseDown)
 			{
 				if (Event.current.button == 1 && Event.current.mousePosition.y < 16)
 				{
@@ -808,7 +808,7 @@ namespace CameraForgeEditor
 			}
 			
 			// Delete this posenode
-			if (draggingSlot == null && editingSlot == null && Event.current != null && Event.current.type == EventType.mouseDown)
+			if (draggingSlot == null && editingSlot == null && Event.current != null && Event.current.type == EventType.MouseDown)
 			{
 				if (Event.current.button == 1 && Event.current.mousePosition.y < 16)
 				{
@@ -817,7 +817,7 @@ namespace CameraForgeEditor
 			}
 			
 			// Multiple-click this posenode
-			if (draggingSlot == null && editingSlot == null && Event.current != null && Event.current.type == EventType.mouseDown)
+			if (draggingSlot == null && editingSlot == null && Event.current != null && Event.current.type == EventType.MouseDown)
 			{
 				if (Event.current.button == 0 && Event.current.clickCount == 2 && Event.current.mousePosition.y < 16)
 				{
