@@ -92,6 +92,7 @@ public class UICompoundWndListItem : MonoBehaviour
                 }
             }
         }
+        mContentTexture.gameObject.active = false;
     }
 
     private void SetCotent(Texture _contentTexture)
@@ -104,7 +105,6 @@ public class UICompoundWndListItem : MonoBehaviour
         {
             mContentSprites[i].gameObject.SetActive(false);
         }
-        
     }
 
     void OnMouseOver()

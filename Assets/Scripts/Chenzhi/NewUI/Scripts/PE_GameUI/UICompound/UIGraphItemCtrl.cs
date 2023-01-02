@@ -96,6 +96,8 @@ public class UIGraphItemCtrl : MonoBehaviour
                 }
             }
         }
+        if (mContentTexture != null)
+            mContentTexture.gameObject.SetActive(false);
 	}
 	
 	public void SetCotent(Texture _contentTexture)
@@ -112,7 +114,7 @@ public class UIGraphItemCtrl : MonoBehaviour
         {
             mContentSprites[i].gameObject.SetActive(false);        
         }
-		
+        mContentTexture.gameObject.SetActive(true);
 	}
 
 
@@ -155,20 +157,4 @@ public class UIGraphItemCtrl : MonoBehaviour
 		if(ItemClick != null)
 			ItemClick(mIndex);
 	}
-
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
-
-
-
-
 }
