@@ -1,9 +1,20 @@
 Required assets:
-AStarPathfindingProject https://arongranberg.com/astar/download
+
+AStarPathfindingProject 3.6+ Pro!: https://arongranberg.com/astar/download
 DunGen: https://assetstore.unity.com/packages/tools/utilities/dungen-15682
 Steamworks.NET: https://github.com/rlabrecque/Steamworks.NET/releases/download/15.0.1/Steamworks.NET_15.0.1.unitypackage
+animfollow (modified): http://www.kavorka-racing.com/uploads/1/4/6/9/1469198/animfollow8.unitypackage
+uLink: https://github.com/yuchao/uLink ?
+uLobby
+FinalIK: https://assetstore.unity.com/packages/tools/animation/final-ik-14290
+NAudio
+SSAO Pro 2.0+: https://assetstore.unity.com/packages/vfx/shaders/fullscreen-camera-effects/ssao-pro-22369
+Jboy (for json)
+Locomotion System: https://assetstore.unity.com/packages/tools/animation/locomotion-system-7135
 Assets -> Import Package -> CrossPlatformInput, Effects, Vehicles (use old, Unity 5.2 versions :( )
 ...
+
+Also see git submodules, link them to Assets/
 
 Required files:
 if needed, copy System.Data.dll from unity to Assets/Plugins/ManagedDlls/
