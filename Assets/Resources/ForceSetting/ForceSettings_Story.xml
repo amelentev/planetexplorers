@@ -13,14 +13,14 @@
 		</ForceDesc>
 		<ForceDesc ID="2" Name="Maria Creatures">
 			<Color>63,72,204,255</Color>
-			<Ally>2</Ally><!-- ÁªÃË --><!-- ¶à¸öÁªÃË·Ö¿ªĞ´ -->
-			<JoinablePlayerCount>0</JoinablePlayerCount><!-- ¶àÈË¿É×ÔÓÉ¼ÓÈëµÄÍæ¼ÒÊıÁ¿ -->
-			<PublicInventory>true</PublicInventory><!-- ¹«¹²±³°ü -->
-			<ItemUseShare>true</ItemUseShare><!-- µÀ¾ßÊÇ·ñ¹²ÏíÊ¹ÓÃ -->
-			<ItemShare>true</ItemShare><!-- µÀ¾ßÊÇ·ñ¹²ÏíÊ°È¡ -->
-			<InternalConflict>true</InternalConflict><!-- ×ÔÉíÄÚ²¿ -->
-			<AllyConflict>true</AllyConflict><!-- Í¬ÃË -->
-			<EnemyConflict>true</EnemyConflict><!-- µĞÈË -->
+			<Ally>2</Ally><!-- è”ç›Ÿ --><!-- å¤šä¸ªè”ç›Ÿåˆ†å¼€å†™ -->
+			<JoinablePlayerCount>0</JoinablePlayerCount><!-- å¤šäººå¯è‡ªç”±åŠ å…¥çš„ç©å®¶æ•°é‡ -->
+			<PublicInventory>true</PublicInventory><!-- å…¬å…±èƒŒåŒ… -->
+			<ItemUseShare>true</ItemUseShare><!-- é“å…·æ˜¯å¦å…±äº«ä½¿ç”¨ -->
+			<ItemShare>true</ItemShare><!-- é“å…·æ˜¯å¦å…±äº«æ‹¾å– -->
+			<InternalConflict>true</InternalConflict><!-- è‡ªèº«å†…éƒ¨ -->
+			<AllyConflict>true</AllyConflict><!-- åŒç›Ÿ -->
+			<EnemyConflict>true</EnemyConflict><!-- æ•Œäºº -->
 		</ForceDesc>
 		<ForceDesc ID="3" Name="Maria Natives">
 			<Color>112,146,190,255</Color>
