@@ -17,5 +17,10 @@ Assets -> Import Package -> CrossPlatformInput, Effects, Vehicles (use old, Unit
 Also see git submodules, link them to Assets/
 
 Required files:
-if needed, copy System.Data.dll from unity to Assets/Plugins/ManagedDlls/
-copy or link "VoxelData" dir from steam game
+Copy these files from Unity (Editor/Data/Mono/lib/mono/2.0/) to Assets/Plugins/ManagedDlls/ :
+ Mono.CSharp.dll
+ Mono.Data.SqliteClient.dll
+ System.Data.dll
+ System.Windows.Forms.dll
+
+Copy or link "VoxelData" dir from steam game (SteamLibrary/steamapps/common/Planet Explorers/VoxelData) to ./VoxelData/
