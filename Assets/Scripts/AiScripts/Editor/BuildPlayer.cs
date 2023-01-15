@@ -481,7 +481,7 @@ public class BuildPlayer : EditorWindow
 				return new BuildParameter(BuildPath_Pathea_Mac_X64,
 				                          BuildName,
 				                          "FMOD_LIVEUPDATE",
-				                          BuildTarget.StandaloneOSXUniversal,
+				                          BuildTarget.StandaloneOSX,
 				                          BuildOptions.Development | BuildOptions.AllowDebugging | BuildOptions.ConnectWithProfiler,
 				                          BuildTargetGroup.Standalone);
 			}
@@ -625,7 +625,7 @@ public class BuildPlayer : EditorWindow
 				return new BuildParameter(BuildPath_Steam_Mac_X64,
 				                          BuildName,
 				                          "SteamVersion",
-				                          BuildTarget.StandaloneOSXUniversal,
+				                          BuildTarget.StandaloneOSX,
 				                          BuildOptions.None,
 				                          BuildTargetGroup.Standalone);
 			}
@@ -638,7 +638,7 @@ public class BuildPlayer : EditorWindow
 				return new BuildParameter(BuildPath_Steam_Mac_X64,
 				                          BuildName,
 				                          "SteamVersion;DemoVersion",
-				                          BuildTarget.StandaloneOSXUniversal,
+				                          BuildTarget.StandaloneOSX,
 				                          BuildOptions.None,
 				                          BuildTargetGroup.Standalone);
 			}
@@ -664,7 +664,7 @@ public class BuildPlayer : EditorWindow
 				return new BuildParameter(BuildPath_Steam_Mac_X64,
 				                          BuildName,
 				                          "SteamVersion;FMOD_LIVEUPDATE",
-				                          BuildTarget.StandaloneOSXUniversal,
+				                          BuildTarget.StandaloneOSX,
 				                          BuildOptions.Development | BuildOptions.AllowDebugging | BuildOptions.ConnectWithProfiler,
 				                          BuildTargetGroup.Standalone);
 			}
@@ -832,7 +832,7 @@ public class BuildPlayer : EditorWindow
                         return ".app";
                     case BuildTarget.StandaloneOSXIntel64:
                         return ".app";
-                    case BuildTarget.StandaloneOSXUniversal:
+                    case BuildTarget.StandaloneOSX:
                         return ".app";
                     case BuildTarget.StandaloneWindows:
                         return ".exe";

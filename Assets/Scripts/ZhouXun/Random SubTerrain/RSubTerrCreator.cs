@@ -39,7 +39,7 @@ public class RSubTerrCreator : MonoBehaviour
 		
 		Terrain terr = gameObject.AddComponent<Terrain>();
 		terr.terrainData = m_TerrData;
-		terr.editorRenderFlags = ~TerrainRenderFlags.heightmap;
+		terr.editorRenderFlags = ~TerrainRenderFlags.Heightmap;
 		terr.treeDistance = 1024F;
 		terr.treeMaximumFullLODCount = 8192;
         terr.treeBillboardDistance = RSubTerrainMgr.Instance.Layers[LayerIndex].BillboardDist.Level(SystemSettingData.Instance.treeLevel);

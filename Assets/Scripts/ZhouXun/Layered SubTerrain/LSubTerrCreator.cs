@@ -69,7 +69,7 @@ public class LSubTerrCreator : MonoBehaviour
 		
 		Terrain terr = gameObject.AddComponent<Terrain>();
 		terr.terrainData = m_TerrData;
-		terr.editorRenderFlags = ~TerrainRenderFlags.heightmap;
+		terr.editorRenderFlags = ~TerrainRenderFlags.Heightmap;
 		terr.treeDistance = 1024F;
 		terr.treeMaximumFullLODCount = 8192;
         terr.treeBillboardDistance = LSubTerrainMgr.Instance.Layers[LayerIndex].BillboardDist.Level(SystemSettingData.Instance.treeLevel);
@@ -149,7 +149,7 @@ public class LSubTerrCreator : MonoBehaviour
 			IntVector3 pos = LSubTerrUtils.IndexToPos(kvp.Key);
             tempIndexX = pos.x - xIndex;
             tempIndexZ = pos.z - zIndex;
-            //lz-2017.07.27 ²îÖµÈç¹ûÊÇInt.MinValueÓÃMathf.Abs»á±¨´í: OverflowException: Value is too small
+            //lz-2017.07.27 ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Int.MinValueï¿½ï¿½Mathf.Absï¿½á±¨ï¿½ï¿½: OverflowException: Value is too small
             if (System.Math.Abs(tempIndexX) > 3 || System.Math.Abs(tempIndexZ) > 3
                || System.Math.Abs(tempIndexX) <= 1 && System.Math.Abs(tempIndexZ) <= 1)
             {

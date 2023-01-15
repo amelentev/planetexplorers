@@ -224,7 +224,7 @@ namespace WhiteCat
 			EditorGUI.DrawRect(rect2, rectBackColor);
 			EditorKit.DrawWireRect(rect2, rectLineColor, 1);
 
-			if (Event.current.type == EventType.mouseDown || isDragging)
+			if (Event.current.type == EventType.MouseDown || isDragging)
 			{
 				Vector2 mouse = Event.current.mousePosition - rect2.min;
 				if (!isDragging && mouse.x >= 0 && mouse.x <= rect2.width && mouse.y >= 0 && mouse.y <= rect2.height)
@@ -234,7 +234,7 @@ namespace WhiteCat
 				}
 				if (isDragging) target.normalizedTime = mouse.x / rect2.width;
 			}
-			if (Event.current.rawType == EventType.mouseUp)
+			if (Event.current.rawType == EventType.MouseUp)
 			{
 				isDraggingField.SetValue(target, isDragging = false);
 			}

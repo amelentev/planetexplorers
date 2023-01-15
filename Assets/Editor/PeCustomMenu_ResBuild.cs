@@ -101,7 +101,7 @@ public partial class PeCustomMenuc : EditorWindow
     [MenuItem("Assets/AssetBundles/Clean Cache")]
     static void CleanAssetBundleCache()
     {
-        Caching.CleanCache();
+        Caching.ClearCache();
     }
 
     [MenuItem("Assets/AssetBundles/Build AssetBundles for Item")]

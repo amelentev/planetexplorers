@@ -282,7 +282,7 @@ namespace WhiteCat
 			{
 				Event evt = Event.current;
 
-				if (evt.type == EventType.keyDown)
+				if (evt.type == EventType.KeyDown)
 				{
 					if (evt.character == 'F' || evt.character == 'f')
 					{
@@ -290,7 +290,7 @@ namespace WhiteCat
 						SceneView.lastActiveSceneView.LookAt(target.GetNodePosition(nodesList.index));
 					}
 				}
-				else if(evt.type == EventType.mouseDown)
+				else if(evt.type == EventType.MouseDown)
 				{
 					if (evt.button == 1)
 					{

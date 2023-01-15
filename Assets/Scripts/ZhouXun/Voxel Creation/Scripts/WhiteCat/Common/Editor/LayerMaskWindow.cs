@@ -74,7 +74,7 @@ namespace WhiteCat
 
 		void OnGUI()
 		{
-			if(Event.current.type == EventType.mouseMove)
+			if(Event.current.type == EventType.MouseMove)
 			{
 				float y = Event.current.mousePosition.y - interval * 3 - buttonHeight;
 				int nowHover = y < 0 ? -1 : (int)(y / lineHeight);
