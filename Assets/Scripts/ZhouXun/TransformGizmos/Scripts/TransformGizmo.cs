@@ -63,7 +63,7 @@ public abstract class TransformGizmo : MonoBehaviour
 			cam.nearClipPlane = 3f;
 			cam.renderingPath = RenderingPath.Forward;
 			cam.useOcclusionCulling = false;
-			cam.hdr = false;
+			cam.allowHDR = false;
 		}
 
 		cam.fieldOfView = MainCamera.fieldOfView;

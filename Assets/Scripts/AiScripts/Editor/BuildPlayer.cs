@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.Build.Reporting;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -878,13 +879,13 @@ public class BuildPlayer : EditorWindow
         PreparePlayerSetting(parameter);
         PrepareBuildSetting(parameter);
 
-        string error = BuildPipeline.BuildPlayer(parameter.scenes, parameter.path, parameter.target, parameter.options);
-        if (string.IsNullOrEmpty (error)) {
+        BuildReport report = BuildPipeline.BuildPlayer(parameter.scenes, parameter.path, parameter.target, parameter.options);
+        if (report.summary.result == BuildResult.Succeeded) {
 			CopyFile (parameter);
 			Debug.Log ("Succed to build player : " + parameter);
 		} else {
-			Debug.LogError (error);
-			return EditorUtility.DisplayDialog("!Failed", error, "Continue", "Abort");
+			Debug.LogError (report.summary);
+			return EditorUtility.DisplayDialog("!Failed", report.summary.ToString(), "Continue", "Abort");
 		}
 		return true;
     }

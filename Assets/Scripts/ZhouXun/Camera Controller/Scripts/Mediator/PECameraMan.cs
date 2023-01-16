@@ -419,7 +419,7 @@ public class PECameraMan : MonoBehaviour
         AAEnable(SystemSettingData.Instance.mAntiAliasing > 0);
         DepthScEnable(SystemSettingData.Instance.mDepthBlur);
         SSAOEnable(SystemSettingData.Instance.mSSAO);
-		Camera.main.hdr = SystemSettingData.Instance.HDREffect;
+		Camera.main.allowHDR = SystemSettingData.Instance.HDREffect;
 		PeCamera.SetVar("Camera Inertia", SystemSettingData.Instance.CamInertia);
         PeCamera.SetVar("Drive Camera Inertia", SystemSettingData.Instance.DriveCamInertia);  //log: lz-2016.05.18 功能 #1924在Options内增加载具的摄像机跟随灵敏度调整功能
 //        CamFOV(SystemSettingData.Instance.CameraFov);

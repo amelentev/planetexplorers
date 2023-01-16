@@ -151,7 +151,7 @@ public class OutlineEffect : MonoBehaviour
 		cam.cullingMask = layerMask;
 		cam.renderingPath = RenderingPath.VertexLit;
 		cam.rect =  new Rect(0f, 0f, 1f, 1f);
-		cam.hdr = false;
+		cam.allowHDR = false;
 		cam.useOcclusionCulling = false;
 		cam.backgroundColor = Color.clear;
 		cam.clearFlags = CameraClearFlags.SolidColor;
