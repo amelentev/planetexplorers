@@ -92,8 +92,10 @@ public class VCTriphaseFixedPartData : VCFixedPartData, IVCMultiphaseComponentDa
 		{
 			if ( r is TrailRenderer )
 				r.enabled = true;
-			else if ( r is ParticleRenderer )
+			#if !UNITY_2018_1_OR_NEWER
+			else if (r is ParticleRenderer )
 				r.enabled = true;
+			#endif
 			else if ( r is ParticleSystemRenderer )
 				r.enabled = true;
 			else if ( r is LineRenderer )

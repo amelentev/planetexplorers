@@ -21,7 +21,9 @@ public class LobbyInterface : MonoBehaviour
 	{
 		try
 		{
+			#if !UNITY_2018_1_OR_NEWER
 			Lobby.RPC("RPC_LobbyMsg", Lobby.lobby, obj);
+			#endif
 		}
 		catch (Exception e)
 		{
@@ -29,7 +31,9 @@ public class LobbyInterface : MonoBehaviour
 		}
 	}
 
+	#if !UNITY_2018_1_OR_NEWER
 	[RPC]
+	#endif
 	protected void RPC_LobbyMsg(BitStream stream, LobbyMessageInfo info)
 	{
 		ELobbyMsgType msgType = ELobbyMsgType.Max;

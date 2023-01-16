@@ -204,7 +204,9 @@ public class NetworkInterface : uLink.MonoBehaviour
 		return !IsClient || null == _netView ? false : (_netView.viewID == uLink.NetworkViewID.unassigned ? false : true);
 	}
 
+	#if !UNITY_2018_1_OR_NEWER
 	[RPC]
+	#endif
 	protected void URPC_Sync(uLink.BitStream stream, uLink.NetworkMessageInfo info)
 	{
 		EPacketType type = EPacketType.PT_MAX;
@@ -227,7 +229,9 @@ public class NetworkInterface : uLink.MonoBehaviour
 		}
 	}
 
+	#if !UNITY_2018_1_OR_NEWER
 	[RPC]
+	#endif
 	protected void RPC_Sync(uLink.BitStream stream, uLink.NetworkMessageInfo info)
 	{
 		EPacketType type = EPacketType.PT_MAX;

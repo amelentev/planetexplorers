@@ -128,7 +128,9 @@ namespace WhiteCat
 								foreach (Renderer r in renderers)
 								{
 									if (r is TrailRenderer ||
+										#if !UNITY_2018_1_OR_NEWER
 										r is ParticleRenderer ||
+										#endif
 										r is ParticleSystemRenderer ||
 										r is LineRenderer ||
 										r is SpriteRenderer)

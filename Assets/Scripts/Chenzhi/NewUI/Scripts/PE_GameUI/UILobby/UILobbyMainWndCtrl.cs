@@ -1027,11 +1027,20 @@ public class UILobbyMainWndCtrl : UIStaticWnd
     {
         if (Input.GetMouseButtonUp(0))
         {
-            if (!UnityEngine.Network.HavePublicAddress())
-                MessageBox_N.ShowOkBox(PELocalization.GetString(8000057), ShowUIServerWnd);
+            if (!HavePublicAddress())
+                 MessageBox_N.ShowOkBox(PELocalization.GetString(8000057), ShowUIServerWnd);
             else
                 ShowUIServerWnd();
         }
+    }
+
+    bool HavePublicAddress()
+    {
+        #if UNITY_2018_1_OR_NEWER
+            return true; // TODO:
+        #else
+            return UnityEngine.Network.HavePublicAddress();
+        #endif
     }
 
     void ShowUIServerWnd()

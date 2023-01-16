@@ -88,7 +88,7 @@ public class ParticleScaler : MonoBehaviour
 
 	void ScaleLegacySystems(float scaleFactor)
 	{
-#if UNITY_EDITOR 
+#if UNITY_EDITOR && !UNITY_2018_1_OR_NEWER
 		//get all emitters we need to do scaling on
 		ParticleEmitter[] emitters = GetComponentsInChildren<ParticleEmitter>();
 
