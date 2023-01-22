@@ -1,6 +1,7 @@
 // (c)2011 Unity Park. All Rights Reserved.
 
 using UnityEngine;
+using UnityEngine.UI;
 using uLink;
 
 [AddComponentMenu("uLink Utilities/Object Label")]
@@ -11,14 +12,14 @@ public class ProxyLabel : uLink.MonoBehaviour
 	public float clampBorderSize = 0.05f;  // How much viewport space to leave at the borders when a label is being clamped
 	public Color color = Color.green;
 	public Vector3 offset = new Vector3(0, 2, 0);    // Units in world space to offset; 1 unit above object by default
-	public GUIText prefabLabel;
-	private GUIText myGuiText = null;
+	public Text prefabLabel;
+	private Text myGuiText = null;
 	//public bool clampToScreen = false;  // If true, label will be visible even if object is off screen
 
 	void Awake()
 	{
 		GameObject tmp = Resources.Load("Prefab/PlayerPrefab/PlayerLabelText") as GameObject;
-		prefabLabel = tmp.GetComponent<GUIText>();
+		prefabLabel = tmp.GetComponent<Text>();
 	}
 
 	void OnDestroy()
@@ -37,7 +38,7 @@ public class ProxyLabel : uLink.MonoBehaviour
 	
 	public void SetName(string name, int group)
 	{
-		myGuiText = Instantiate(prefabLabel, Vector3.zero, Quaternion.identity) as GUIText;
+		myGuiText = Instantiate(prefabLabel, Vector3.zero, Quaternion.identity) as Text;
 		if (null != myGuiText)
 		{
 			myGuiText.text = name;
