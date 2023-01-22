@@ -4,8 +4,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Forms;
-
 
 public class GMTools : EditorWindow
 {
@@ -174,26 +172,14 @@ public class GMTools : EditorWindow
     void ExportTxt()
     {
         string savePath = "";
+        savePath = UnityEditor.EditorUtility.SaveFilePanel("脦脛卤鸥脦脛艗镁", "", "text.txt", "txt");
+
+        if (savePath.Length == 0) return;
+
         StringBuilder sb = new StringBuilder();
-        SaveFileDialog opf = new SaveFileDialog();
-        opf.Filter = "ÎÄ±ŸÎÄŒþ|*.txt";
-        if (opf.ShowDialog() == DialogResult.OK)
-        {
-            savePath = opf.FileName;
-        }
-        else
-            return;
-
-        if (savePath == "")
-        {
-            MessageBox.Show("ÇëÑ¡Ôñ±£ŽæÂ·Ÿ¶£¡");
-            return;
-        }
-
-        string content = "";
         for (int i = 0; i < m_PathList.Count; i++)
         {
-            content = "m_PathList.Add(new Vector3" + m_PathList[i].ToString() + ");" + "\r\n";
+            string content = "m_PathList.Add(new Vector3" + m_PathList[i].ToString() + ");" + "\r\n";
             sb.Append(content);
         }
 
