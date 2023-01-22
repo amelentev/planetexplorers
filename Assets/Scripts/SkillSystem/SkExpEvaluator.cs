@@ -23,10 +23,16 @@ namespace SkillSystem
 	{
 		List<ICompilableExp> _reqers = new List<ICompilableExp>();
 		List<string> _progs = new List<string>();
+		private readonly Mono.CSharp.Evaluator evaluator;
 		public SkExpEvaluator()
 		{
-			Mono.CSharp.Evaluator.Init(new string[] {} );
-			Mono.CSharp.Evaluator.ReferenceAssembly(typeof(ISkAttribs).Assembly);
+			var settings = new Mono.CSharp.CompilerSettings() {
+				StdLib = true
+			};
+			var reportPrinter = new Mono.CSharp.ConsoleReportPrinter();
+			var ctx = new Mono.CSharp.CompilerContext(settings, reportPrinter);
+			evaluator = new Mono.CSharp.Evaluator(ctx);
+			evaluator.ReferenceAssembly(typeof(ISkAttribs).Assembly);
 		}
 		public void Compile()
 		{
@@ -59,7 +65,7 @@ namespace SkillSystem
 			}
 			allprogs += "};";
 
-			var method = Mono.CSharp.Evaluator.Compile(allprogs);
+			var method = evaluator.Compile(allprogs);
 			object allActions = null;
 			method(ref allActions);
 
