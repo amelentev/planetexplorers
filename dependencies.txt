@@ -24,3 +24,8 @@ Copy these files from Unity (Editor/Data/Mono/lib/mono/2.0/) to Assets/Plugins/M
  System.Windows.Forms.dll
 
 Copy or link "VoxelData" dir from steam game (SteamLibrary/steamapps/common/Planet Explorers/VoxelData) to ./VoxelData/
+
+sice Unity2019:
+Install https://github.com/GlitchEnzo/NuGetForUnity
+Install NAudio via nuget (automatic?)
+Switch to OpenGL (problems with dx11)

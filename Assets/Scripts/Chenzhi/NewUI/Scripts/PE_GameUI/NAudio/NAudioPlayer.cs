@@ -2,7 +2,6 @@
 using System.IO;
 using System;
 using NAudio.Wave;
-using NAudio.Flac;
 
 public class NAudioPlayer
 {
@@ -27,9 +26,6 @@ public class NAudioPlayer
             {
                 case SupportFormatType.mp3:
                     wave = new Mp3FileReader(memoryStream);
-                    break;
-                case SupportFormatType.flac:
-                    wave = new FlacReader(memoryStream);
                     break;
                     //case SupportFormatType.wav:
                     //    wave = new WaveFileReader(memoryStream);
